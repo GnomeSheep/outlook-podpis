@@ -10,7 +10,7 @@
        UPRAVTE:
        1. Id — nové GUID z https://www.guidgenerator.com
        2. ProviderName — název firmy
-       3. Nahraďte VAS-HOSTING.cz vaší skutečnou HTTPS doménou
+       3. Nahraďte VAS-HOSTING.cz í skutečnou HTTPS doménou
        ====================================================== -->
 
   <Id>12345678-1234-1234-1234-123456789abc</Id>
@@ -19,12 +19,12 @@
   <DefaultLocale>cs-CZ</DefaultLocale>
   <DisplayName DefaultValue="Podpis CloudForce"/>
   <Description DefaultValue="Personalizovaný firemní podpis s výběrem vzhledů."/>
-  <IconUrl DefaultValue="https://VAS-HOSTING.cz/signature-addin/icon-32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://VAS-HOSTING.cz/signature-addin/icon-64.png"/>
-  <SupportUrl DefaultValue="https://VAS-HOSTING.cz"/>
+  <IconUrl DefaultValue="https://gnomesheep.github.io/outlook-podpis/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://gnomesheep.github.io/outlook-podpis/icon-64.png"/>
+  <SupportUrl DefaultValue="https://gnomesheep.github.io/outlook-podpis/"/>
 
   <AppDomains>
-    <AppDomain>https://VAS-HOSTING.cz</AppDomain>
+    <AppDomain>https://gnomesheep.github.io/outlook-podpis/</AppDomain>
   </AppDomains>
 
   <Hosts>
@@ -40,7 +40,7 @@
   <FormSettings>
     <Form xsi:type="ItemEdit">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://VAS-HOSTING.cz/signature-addin/taskpane.html"/>
+        <SourceLocation DefaultValue="https://gnomesheep.github.io/outlook-podpis/taskpane.html"/>
         <RequestedHeight>450</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -69,7 +69,7 @@
           <!-- Runtime pro automatické vkládání podpisu (event-based) -->
           <Runtimes>
             <Runtime resid="WebViewRuntime.Url">
-              <Override type="javascript" resid="JSRuntime.Url"/>
+              <Override type="jacript" resid="JSRuntime.Url"/>
             </Runtime>
           </Runtimes>
 
@@ -114,15 +114,15 @@
 
       <Resources>
         <bt:Images>
-          <bt:Image id="Icon.16x16" DefaultValue="https://VAS-HOSTING.cz/signature-addin/icon-16.png"/>
-          <bt:Image id="Icon.32x32" DefaultValue="https://VAS-HOSTING.cz/signature-addin/icon-32.png"/>
-          <bt:Image id="Icon.80x80" DefaultValue="https://VAS-HOSTING.cz/signature-addin/icon-80.png"/>
+          <bt:Image id="Icon.16x16" DefaultValue="https://gnomesheep.github.io/outlook-podpis/icon-16.png"/>
+          <bt:Image id="Icon.32x32" DefaultValue="https://gnomesheep.github.io/outlook-podpis/icon-32.png"/>
+          <bt:Image id="Icon.80x80" DefaultValue="https://gnomesheep.github.io/outlook-podpis/icon-80.png"/>
         </bt:Images>
         <bt:Urls>
-          <bt:Url id="Commands.Url"        DefaultValue="https://VAS-HOSTING.cz/signature-addin/commands.html"/>
-          <bt:Url id="Taskpane.Url"        DefaultValue="https://VAS-HOSTING.cz/signature-addin/taskpane.html"/>
-          <bt:Url id="WebViewRuntime.Url"  DefaultValue="https://VAS-HOSTING.cz/signature-addin/commands.html"/>
-          <bt:Url id="JSRuntime.Url"       DefaultValue="https://VAS-HOSTING.cz/signature-addin/commands.js"/>
+          <bt:Url id="Commands.Url"        DefaultValue="https://gnomesheep.github.io/outlook-podpis/commands.html"/>
+          <bt:Url id="Taskpane.Url"        DefaultValue="https://gnomesheep.github.io/outlook-podpis/taskpane.html"/>
+          <bt:Url id="WebViewRuntime.Url"  DefaultValue="https://gnomesheep.github.io/outlook-podpis/commands.html"/>
+          <bt:Url id="JSRuntime.Url"       DefaultValue="https://gnomesheep.github.io/outlook-podpis/commands.js"/>
         </bt:Urls>
         <bt:ShortStrings>
           <bt:String id="GroupLabel" DefaultValue="Podpis"/>
