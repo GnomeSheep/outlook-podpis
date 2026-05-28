@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Podpis CloudForce</title>
+<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+<script src="lib-qrcode.js"></script>
+<script src="signature-renderer.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--bg:#f0f2f5;--surface:#fff;--surface2:#f8fafc;--border:#e2e6ed;--accent:#23457a;--green:#1fc09f;--text:#1a2540;--muted:#7a8599;--radius:8px;--shadow:0 1px 4px rgba(35,69,122,.08);}
+body{font-family:'Inter','Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:12px;}
+.header{background:var(--accent);padding:10px 14px;display:flex;align-items:center;justify-content:space-between;}
+.header-logo{font-size:14px;font-weight:700;color:#fff;letter-spacing:-.02em;}
+.header-logo span{color:var(--green);}
+.header-sub{font-size:10px;color:rgba(255,255,255,.6);margin-top:1px;}
+.lang-sel{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:6px;font-size:11px;padding:3px 6px;outline:none;cursor:pointer;}
+.lang-sel option{color:#000;}
+.tabs{display:flex;background:var(--surface);border-bottom:1px solid var(--border);}
+.tab{flex:1;padding:9px 4px;text-align:center;font-size:11px;font-weight:500;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;}
+.tab.active{color:var(--accent);border-bottom-color:var(--green);font-weight:600;}
+.panel{display:none;padding:12px 14px;}
+.panel.active{display:block;}
+.section-label{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:12px 0 7px;display:flex;align-items:center;justify-content:space-between;}
+.section-label:first-child{margin-top:0;}
+.field{margin-bottom:7px;}
+label{display:block;font-size:10px;font-weight:600;color:var(--muted);margin-bottom:3px;}
+input,select{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-family:inherit;font-size:12px;padding:6px 9px;outline:none;transition:border-color .15s,box-shadow .15s;box-shadow:var(--shadow);}
+input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 2px rgba(35,69,122,.12);}
+input::placeholder{color:#bcc4d0;}
+.btn{width:100%;padding:9px;border:none;border-radius:var(--radius);font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;}
+.btn-primary{background:var(--accent);color:#fff;margin-top:12px;}
+.btn-primary:hover{background:#1a3460;transform:translateY(-1px);}
+.btn-secondary{background:var(--surface);color:var(--muted);border:1px solid var(--border);margin-top:6px;}
+.btn-secondary:hover{color:var(--text);border-color:var(--accent);}
+.btn-magic{background:linear-gradient(135deg,#23457a,#1fc09f);color:#fff;margin-bottom:10px;}
+.btn-magic:hover{filter:brightness(1.05);transform:translateY(-1px);}
+.skin-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px;}
+.skin-card{border:2px solid var(--border);border-radius:var(--radius);padding:8px;cursor:pointer;transition:all .15s;background:var(--surface);position:relative;}
+.skin-card.selected{border-color:var(--green);box-shadow:0 0 0 3px rgba(31,192,159,.15);}
+.skin-check{display:none;position:absolute;top:5px;right:5px;width:14px;height:14px;background:var(--green);border-radius:50%;align-items:center;justify-content:center;color:#fff;font-size:9px;}
+.skin-card.selected .skin-check{display:flex;}
+.skin-preview{height:40px;border-radius:5px;overflow:hidden;}
+.skin-name{font-size:10px;font-weight:600;color:var(--text);margin-top:6px;}
+.skin-sub{font-size:9px;color:var(--muted);}
+.preview-wrap{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow);overflow:auto;}
+.preview-title{font-size:9px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--muted);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;}
+.toast{display:none;align-items:center;gap:7px;background:#edfaf6;border:1px solid var(--green);border-radius:var(--radius);padding:8px 10px;margin-top:10px;font-size:11px;color:#0e8a71;}
+.toast.show{display:flex;}
+.loading{text-align:center;padding:20px;color:var(--muted);font-size:11px;}
+.switch-row{display:flex;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:8px 10px;margin-top:8px;box-shadow:var(--shadow);}
+.switch-row .sw-label{font-size:11px;font-weight:500;color:var(--text);}
+.switch-row .sw-sub{font-size:9px;color:var(--muted);margin-top:1px;}
+.switch{position:relative;width:34px;height:18px;flex-shrink:0;}
+.switch input{display:none;}
+.slider{position:absolute;inset:0;background:#cbd5e1;border-radius:18px;transition:.2s;cursor:pointer;}
+.slider::before{content:'';position:absolute;width:14px;height:14px;left:2px;top:2px;background:#fff;border-radius:50%;transition:.2s;}
+.switch input:checked + .slider{background:var(--green);}
+.switch input:checked + .slider::before{transform:translateX(16px);}
+.photo-preview{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--border);display:none;}
+.photo-row{display:flex;align-items:center;gap:10px;}
+.dropzone{flex:1;border:1.5px dashed var(--border);border-radius:var(--radius);padding:10px;text-align:center;font-size:10px;color:var(--muted);cursor:pointer;transition:all .15s;}
+.dropzone:hover,.dropzone.drag{border-color:var(--accent);background:rgba(35,69,122,.04);color:var(--accent);}
+.social-field{position:relative;}
+.social-field .prefix{position:absolute;left:8px;top:50%;transform:translateY(-50%);width:18px;height:18px;line-height:18px;text-align:center;border-radius:4px;color:#fff;font-size:9px;font-weight:700;}
+.social-field input{padding-left:32px;}
+</style>
+</head>
+<body>
+<div class="header">
+  <div>
+    <div class="header-logo">Cloud<span>Force</span></div>
+    <div class="header-sub">Správa emailového podpisu</div>
+  </div>
+  <select class="lang-sel" id="langSel" onchange="changeLang()" title="Jazyk podpisu">
+    <option value="cs">🇨🇿 CS</option>
+    <option value="en">🇬🇧 EN</option>
+    <option value="de">🇩🇪 DE</option>
+    <option value="sk">🇸🇰 SK</option>
+  </select>
+</div>
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('form')">👤 Údaje</div>
+  <div class="tab" onclick="switchTab('skin')">🎨 Vzhled</div>
+  <div class="tab" onclick="switchTab('preview')">👁 Náhled</div>
+</div>
+
+<div class="panel active" id="tab-form">
+  <div id="firstRunHint" style="display:none;background:#eef6ff;border:1px solid #b6d8ff;border-radius:8px;padding:9px 11px;margin-bottom:10px;font-size:11px;color:#1a3a66;position:relative;">
+    👋 <strong>Vítejte!</strong> Klikněte na „✨ Načíst moje údaje", vyberte v záložce 🎨 vzhled a hotovo. Pro automatické vkládání zapněte přepínač dole.
+    <span onclick="dismissHint()" style="position:absolute;top:6px;right:8px;cursor:pointer;color:#7a9;font-weight:700;">✕</span>
+  </div>
+  <button class="btn btn-magic" onclick="prefillFromM365()">✨ Načíst moje údaje z Microsoft 365</button>
+
+  <div class="section-label">Osobní údaje</div>
+  <div class="field"><label>Jméno a příjmení *</label><input id="name" type="text" placeholder="Martin Maryška" oninput="updatePreview()"/></div>
+  <div class="field-row" style="display:flex;gap:8px;">
+    <div class="field" style="flex:1;"><label>Pracovní pozice</label><input id="title" type="text" placeholder="Developer" oninput="updatePreview()"/></div>
+    <div class="field" style="flex:0 0 90px;"><label>Zájmena</label><input id="pronouns" type="text" placeholder="on/jeho" oninput="updatePreview()"/></div>
+  </div>
+  <div class="field"><label>Oddělení</label><input id="department" type="text" placeholder="IT &amp; Vývoj" oninput="updatePreview()"/></div>
+
+  <div class="section-label">Foto profilu</div>
+  <div class="photo-row">
+    <img id="photoPreview" class="photo-preview" alt=""/>
+    <div class="dropzone" id="photoDrop">📷 Klikněte nebo přetáhněte foto<br><span style="opacity:.7;">(JPG/PNG)</span></div>
+    <input type="file" id="photoInput" accept="image/*" style="display:none;"/>
+  </div>
+
+  <div class="section-label">Kontakt</div>
+  <div class="field"><label>Telefon</label><input id="phone" type="text" placeholder="+420 721 736 789" oninput="updatePreview()"/></div>
+  <div class="field"><label>Mobil</label><input id="mobile" type="text" placeholder="+420 777 111 222" oninput="updatePreview()"/></div>
+  <div class="field"><label>Email</label><input id="email" type="email" placeholder="jmeno@cloudforce.cz" oninput="updatePreview()"/></div>
+  <div class="field"><label>Adresa kanceláře</label><input id="address" type="text" placeholder="Praha 1, Nové Město" oninput="updatePreview()"/></div>
+
+  <div class="section-label">Sociální sítě</div>
+  <div id="socialFields"><div class="loading" style="padding:6px;">—</div></div>
+
+  <button class="btn btn-primary" onclick="insertSignature()">✉️ Vložit podpis do emailu</button>
+  <div style="display:flex;gap:6px;">
+    <button class="btn btn-secondary" style="flex:1;" onclick="copySignature(this)">📋 Kopírovat</button>
+    <button class="btn btn-secondary" style="flex:1;" onclick="removeSignature(this)">🗑 Odebrat</button>
+  </div>
+  <button class="btn btn-secondary" onclick="saveData()">💾 Uložit údaje</button>
+
+  <div class="switch-row">
+    <div><div class="sw-label">Vkládat podpis automaticky</div><div class="sw-sub">Při každém novém emailu</div></div>
+    <label class="switch"><input type="checkbox" id="autoInsert" onchange="toggleAutoInsert()"><span class="slider"></span></label>
+  </div>
+  <div class="toast" id="toast">✓ Podpis byl vložen!</div>
+</div>
+
+<div class="panel" id="tab-skin">
+  <div class="section-label">Vyberte vzhled podpisu</div>
+  <div id="skinsLoading" class="loading">Načítám skiny...</div>
+  <div class="skin-grid" id="skinGrid" style="display:none;"></div>
+</div>
+
+<div class="panel" id="tab-preview">
+  <div class="preview-title"><span>Živý náhled</span>
+    <label style="font-size:9px;display:flex;align-items:center;gap:4px;cursor:pointer;text-transform:none;letter-spacing:0;font-weight:500;color:var(--muted);">
+      <input type="checkbox" id="darkPreview" onchange="updatePreview()" style="width:auto;box-shadow:none;">🌙 dark
+    </label>
+  </div>
+  <div class="preview-wrap"><div id="previewContainer"></div></div>
+  <button class="btn btn-primary" onclick="insertSignature()">✉️ Vložit podpis</button>
+</div>
+
+<script>
+let skins=[], selectedSkinId=null, userPhoto='', userLang='cs';
+
+/* ---------- skins ---------- */
+async function loadSkins(){
+  try{ const r=await fetch('./skins.json?v='+Date.now()); if(r.ok) skins=await r.json(); }catch(e){}
+  if(!skins.length) skins=[{id:'cloudforce',name:'CloudForce',layout:'two-column',
+    styles:{primaryColor:'#23457a',accentColor:'#1fc09f',fontFamily:"'Segoe UI',Arial,sans-serif",nameSize:16,nameBold:true,nameUppercase:true,nameColor:'#23457a',titleSize:14,titleItalic:true,titleColor:'#000',contactSize:14,contactColor:'#23457a',dividerColor:'#1fc09f',dividerWidth:58,separatorColor:'#bfc0c5'},
+    company:{logoUrl:'https://cloudforce.cz/wp-content/uploads/2026/05/logo-cloudforce.png',logoWidth:200,logoLink:'https://cloudforce.cz/',websiteUrl:'https://cloudforce.cz/',websiteLabel:'www.cloudforce.cz',phoneIconUrl:'https://cloudforce.cz/wp-content/uploads/2026/05/icon-phone.png',emailIconUrl:'https://cloudforce.cz/wp-content/uploads/2026/05/icon-email.png',webIconUrl:'https://cloudforce.cz/wp-content/uploads/2026/05/icon-web.png'},
+    blocks:{name:true,title:true,divider:true,logo:true,phone:true,email:true,web:true,menu:true},menu:{enabled:true,items:[{label:'M365',url:'https://cloudforce.cz/microsoft-365/'}]},social:{enabled:false,platforms:[]}}];
+  if(!selectedSkinId){ const def=skins.find(s=>s.default); selectedSkinId = def ? def.id : skins[0].id; }
+  if(!skins.find(s=>s.id===selectedSkinId)) selectedSkinId=skins[0].id;
+  renderSkinGrid(); renderSocialFields(); updatePreview();
+}
+function renderSkinGrid(){
+  document.getElementById('skinsLoading').style.display='none';
+  const g=document.getElementById('skinGrid'); g.style.display='grid';
+  g.innerHTML=skins.map(s=>{const pc=s.styles?.primaryColor||'#333',ac=s.styles?.accentColor||'#999';
+    return `<div class="skin-card${s.id===selectedSkinId?' selected':''}" onclick="selectSkin('${s.id}')"><div class="skin-check">✓</div>
+      <div class="skin-preview" style="background:${pc};"><div style="padding:5px 7px;"><div style="height:5px;border-radius:2px;background:${ac};width:70%;margin-bottom:4px;"></div><div style="height:3px;border-radius:1px;background:rgba(255,255,255,.4);width:50%;margin-bottom:3px;"></div><div style="height:3px;border-radius:1px;background:rgba(255,255,255,.4);width:80%;"></div></div></div>
+      <div class="skin-name">${s.name}</div><div class="skin-sub">${({['two-column']:'Dva sloupce',stacked:'Jeden sloupec',card:'Karta'})[s.layout]||s.layout}</div></div>`;
+  }).join('');
+}
+function selectSkin(id){selectedSkinId=id;renderSkinGrid();renderSocialFields();updatePreview();localStorage.setItem('cf_skin',id);}
+
+/* ---------- social fields (depend on selected skin) ---------- */
+function renderSocialFields(){
+  const skin=skins.find(s=>s.id===selectedSkinId);
+  const wrap=document.getElementById('socialFields');
+  const plats=(skin && skin.social && skin.social.enabled) ? (skin.social.platforms||[]) : [];
+  if(!plats.length){ wrap.innerHTML='<div style="font-size:10px;color:var(--muted);padding:2px;">Tento skin nemá sociální sítě.</div>'; return; }
+  const saved=getSavedSocial();
+  wrap.innerHTML=plats.map(p=>{const m=(window.SOCIAL_META||{})[p]||{color:'#888',letter:'?'};
+    return `<div class="field social-field"><span class="prefix" style="background:${m.color};">${m.letter}</span>
+      <input type="text" id="social-${p}" placeholder="${p} username" value="${saved[p]||''}" oninput="updatePreview()"></div>`;
+  }).join('');
+}
+function getSocial(){const o={};document.querySelectorAll('[id^=social-]').forEach(el=>{const k=el.id.replace('social-','');if(el.value.trim())o[k]=el.value.trim();});return o;}
+function getSavedSocial(){try{return JSON.parse(localStorage.getItem('cf_signature')||'{}').social||{};}catch(e){return{};}}
+
+/* ---------- M365 prefill ---------- */
+function prefillFromM365(){
+  try{
+    const p=Office.context.mailbox.userProfile;
+    if(p.displayName && !document.getElementById('name').value) document.getElementById('name').value=p.displayName;
+    if(p.emailAddress && !document.getElementById('email').value) document.getElementById('email').value=p.emailAddress;
+    updatePreview();
+    flashBtn(event.target,'✓ Načteno z M365');
+  }catch(e){ alert('Údaje z M365 se nepodařilo načíst. Vyplňte je ručně.'); }
+}
+
+/* ---------- photo upload ---------- */
+function initPhoto(){
+  const drop=document.getElementById('photoDrop'), input=document.getElementById('photoInput');
+  drop.onclick=()=>input.click();
+  input.onchange=e=>{ if(e.target.files[0]) readPhoto(e.target.files[0]); };
+  ['dragover','dragenter'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('drag');}));
+  ['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('drag');}));
+  drop.addEventListener('drop',e=>{ if(e.dataTransfer.files[0]) readPhoto(e.dataTransfer.files[0]); });
+}
+function readPhoto(file){
+  const r=new FileReader();
+  r.onload=e=>{ userPhoto=e.target.result; const pv=document.getElementById('photoPreview'); pv.src=userPhoto; pv.style.display='block'; updatePreview(); };
+  r.readAsDataURL(file);
+}
+
+/* ---------- core ---------- */
+function v(id){return document.getElementById(id)?.value?.trim()||'';}
+function getUser(){return {name:v('name'),title:v('title'),pronouns:v('pronouns'),department:v('department'),phone:v('phone'),mobile:v('mobile'),email:v('email'),address:v('address'),photo:userPhoto,social:getSocial(),lang:userLang};}
+function isDark(){
+  if (document.getElementById('darkPreview')?.checked) return true;
+  // auto-detect Outlook theme
+  try{ const t=Office.context.officeTheme; if(t && t.bodyBackgroundColor){ const c=t.bodyBackgroundColor.replace('#',''); const r=parseInt(c.substr(0,2),16),g=parseInt(c.substr(2,2),16),b=parseInt(c.substr(4,2),16); return (0.299*r+0.587*g+0.114*b)<128; } }catch(e){}
+  return false;
+}
+function updatePreview(){const s=skins.find(x=>x.id===selectedSkinId);if(!s)return;document.getElementById('previewContainer').innerHTML=renderSignatureHTML(s,getUser(),{dark:isDark()});}
+
+/* strip any previously inserted signature block from body HTML */
+function stripExistingSig(html){
+  if(!html) return html;
+  const marker = (window.CF_SIG_MARKER||'cf-signature-block');
+  // remove <div class="cf-signature-block">...</div> (greedy-safe: last occurrence wins, simple approach)
+  const re = new RegExp('<div class="'+marker+'"[\\s\\S]*<\\/div>\\s*$','i');
+  return html.replace(re,'').replace(/(<br\s*\/?>)+\s*$/i,'');
+}
+
+function buildHtmlFor(short){
+  const s=skins.find(x=>x.id===selectedSkinId); if(!s)return null;
+  return renderSignatureHTML(s,getUser(),{dark:isDark(),short:short});
+}
+
+function insertSignature(){
+  const item=Office.context.mailbox.item;
+  // detect reply/forward → offer short signature
+  const doInsert=(useShort)=>{
+    const html=buildHtmlFor(useShort); if(!html)return;
+    item.body.getAsync(Office.CoercionType.Html,res=>{
+      if(res.status!==Office.AsyncResultStatus.Succeeded)return;
+      let body=res.value;
+      const marker=(window.CF_SIG_MARKER||'cf-signature-block');
+      if(body.indexOf(marker)>-1){
+        if(!confirm('V e-mailu už podpis je. Nahradit ho?'))return;
+        body=stripExistingSig(body);
+      }
+      item.body.setAsync(body+'<br/>'+html,{coercionType:Office.CoercionType.Html},sr=>{
+        if(sr.status===Office.AsyncResultStatus.Succeeded){const t=document.getElementById('toast');t.textContent='✓ Podpis byl vložen!';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}
+      });
+    });
+  };
+  if(item.getComposeTypeAsync){
+    item.getComposeTypeAsync(r=>{
+      const isReply = r.status==='succeeded' && r.value && /reply|forward/i.test(r.value.composeType||'');
+      if(isReply && confirm('Jde o odpověď. Vložit krátkou verzi podpisu?')) doInsert(true);
+      else doInsert(false);
+    });
+  } else doInsert(false);
+}
+
+function copySignature(btn){
+  const html=buildHtmlFor(false); if(!html)return;
+  const blob=new Blob([html],{type:'text/html'});
+  const data=[new ClipboardItem({'text/html':blob,'text/plain':new Blob([document.getElementById('previewContainer').innerText||''],{type:'text/plain'})})];
+  (navigator.clipboard.write?navigator.clipboard.write(data):Promise.reject())
+    .then(()=>flashBtn(btn,'✓ Zkopírováno!'))
+    .catch(()=>{ navigator.clipboard.writeText(html).then(()=>flashBtn(btn,'✓ HTML zkopírováno')); });
+}
+
+function removeSignature(btn){
+  const item=Office.context.mailbox.item;
+  item.body.getAsync(Office.CoercionType.Html,res=>{
+    if(res.status!==Office.AsyncResultStatus.Succeeded)return;
+    const marker=(window.CF_SIG_MARKER||'cf-signature-block');
+    if(res.value.indexOf(marker)===-1){flashBtn(btn,'Žádný podpis');return;}
+    item.body.setAsync(stripExistingSig(res.value),{coercionType:Office.CoercionType.Html},sr=>{
+      if(sr.status===Office.AsyncResultStatus.Succeeded)flashBtn(btn,'✓ Odebráno');
+    });
+  });
+}
+
+function dismissHint(){document.getElementById('firstRunHint').style.display='none';localStorage.setItem('cf_seen','1');}
+
+function changeLang(){userLang=document.getElementById('langSel').value;localStorage.setItem('cf_lang',userLang);updatePreview();}
+
+/* ---------- auto-insert preference (stored in roaming settings) ---------- */
+function toggleAutoInsert(){
+  const on=document.getElementById('autoInsert').checked;
+  try{ Office.context.roamingSettings.set('cf_autoInsert',on);
+       Office.context.roamingSettings.set('cf_skin',selectedSkinId);
+       Office.context.roamingSettings.set('cf_user',JSON.stringify(getUser()));
+       Office.context.roamingSettings.saveAsync(); }catch(e){}
+}
+
+function saveData(){
+  const d={name:v('name'),title:v('title'),pronouns:v('pronouns'),department:v('department'),phone:v('phone'),mobile:v('mobile'),email:v('email'),address:v('address'),social:getSocial(),photo:userPhoto,skin:selectedSkinId,lang:userLang};
+  localStorage.setItem('cf_signature',JSON.stringify(d));
+  try{ Office.context.roamingSettings.set('cf_user',JSON.stringify(getUser()));
+       Office.context.roamingSettings.set('cf_skin',selectedSkinId);
+       Office.context.roamingSettings.saveAsync(); }catch(e){}
+  flashBtn(document.querySelectorAll('.btn-secondary')[2],'✓ Uloženo!','💾 Uložit údaje');
+}
+function flashBtn(btn,txt,orig){const o=orig||btn.textContent;btn.textContent=txt;setTimeout(()=>btn.textContent=o,2000);}
+
+function loadSavedData(){
+  try{const s=JSON.parse(localStorage.getItem('cf_signature')||'{}');
+    ['name','title','pronouns','department','phone','mobile','email','address'].forEach(k=>{if(s[k]&&document.getElementById(k))document.getElementById(k).value=s[k];});
+    if(s.photo){userPhoto=s.photo;const pv=document.getElementById('photoPreview');pv.src=userPhoto;pv.style.display='block';}
+    if(s.skin)selectedSkinId=s.skin;
+  }catch(e){}
+  selectedSkinId=selectedSkinId||localStorage.getItem('cf_skin');
+  userLang=localStorage.getItem('cf_lang')||'cs';
+  document.getElementById('langSel').value=userLang;
+  try{ if(Office.context.roamingSettings.get('cf_autoInsert')) document.getElementById('autoInsert').checked=true; }catch(e){}
+  if(!localStorage.getItem('cf_seen')) document.getElementById('firstRunHint').style.display='block';
+}
+
+function switchTab(name){
+  const ns=['form','skin','preview'];
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',ns[i]===name));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  if(name==='preview')updatePreview();
+}
+
+Office.onReady(()=>{ initPhoto(); loadSavedData(); loadSkins(); });
+</script>
+</body>
+</html>

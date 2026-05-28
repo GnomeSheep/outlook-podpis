@@ -1,0 +1,273 @@
+[
+  {
+    "id": "cloudforce",
+    "name": "CloudForce Original",
+    "layout": "two-column",
+    "styles": {
+      "primaryColor": "#23457a",
+      "accentColor": "#1fc09f",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#23457a",
+      "titleSize": 14,
+      "titleItalic": true,
+      "titleColor": "#000000",
+      "contactSize": 14,
+      "contactColor": "#23457a",
+      "dividerColor": "#1fc09f",
+      "dividerWidth": 58,
+      "separatorColor": "#bfc0c5",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://cloudforce.cz/wp-content/uploads/2026/05/logo-cloudforce.png",
+      "logoWidth": 200,
+      "logoLink": "https://cloudforce.cz/",
+      "logoInvert": false,
+      "websiteUrl": "https://cloudforce.cz/",
+      "websiteLabel": "www.cloudforce.cz",
+      "phoneIconUrl": "https://cloudforce.cz/wp-content/uploads/2026/05/icon-phone.png",
+      "emailIconUrl": "https://cloudforce.cz/wp-content/uploads/2026/05/icon-email.png",
+      "webIconUrl": "https://cloudforce.cz/wp-content/uploads/2026/05/icon-web.png"
+    },
+    "blocks": {
+      "name": true,
+      "title": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "email": true,
+      "web": true,
+      "menu": true,
+      "photo": false,
+      "social": true,
+      "qr": false,
+      "mobile": true,
+      "address": true,
+      "pronouns": true,
+      "department": true
+    },
+    "menu": {
+      "enabled": true,
+      "items": [
+        {
+          "label": "M365",
+          "url": "https://cloudforce.cz/microsoft-365/"
+        },
+        {
+          "label": "LICENCE",
+          "url": "https://cloudforce.cz/produkt-kategorie/licence-office-365/"
+        },
+        {
+          "label": "APLIKACE",
+          "url": "https://cloudforce.cz/produkt-kategorie/aplikace/"
+        },
+        {
+          "label": "SLUŽBY",
+          "url": "https://cloudforce.cz/produkt-kategorie/sluzby/"
+        }
+      ]
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin",
+        "x",
+        "github"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {
+      "en": {
+        "websiteLabel": "www.cloudforce.cz",
+        "menu": [
+          "M365",
+          "LICENSES",
+          "APPS",
+          "SERVICES"
+        ],
+        "disclaimer": "This e-mail and its attachments may contain confidential information. If you are not the intended recipient, please delete it."
+      }
+    },
+    "default": true,
+    "disclaimer": "Tento e-mail a jeho přílohy mohou obsahovat důvěrné informace. Pokud nejste zamýšleným příjemcem, zprávu prosím smažte."
+  },
+  {
+    "id": "dark",
+    "name": "Dark Mode",
+    "layout": "stacked",
+    "styles": {
+      "primaryColor": "#c7d2fe",
+      "accentColor": "#6366f1",
+      "fontFamily": "'Segoe UI', Arial, sans-serif",
+      "nameSize": 15,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#ffffff",
+      "titleSize": 12,
+      "titleItalic": false,
+      "titleColor": "#6366f1",
+      "contactSize": 12,
+      "contactColor": "#9ca3af",
+      "darkBg": "#111827",
+      "dividerColor": "#6366f1",
+      "dividerWidth": 50,
+      "photoSize": 56,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://cloudforce.cz/wp-content/uploads/2026/05/logo-cloudforce.png",
+      "logoWidth": 150,
+      "logoLink": "https://cloudforce.cz/",
+      "logoInvert": true,
+      "websiteUrl": "https://cloudforce.cz/",
+      "websiteLabel": "www.cloudforce.cz",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "title": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "email": true,
+      "web": true,
+      "menu": false,
+      "photo": true,
+      "social": true,
+      "qr": false,
+      "mobile": true,
+      "address": true,
+      "pronouns": true,
+      "department": true
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin",
+        "github"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {},
+    "default": false,
+    "disclaimer": ""
+  },
+  {
+    "id": "minimal",
+    "name": "Minimal",
+    "layout": "stacked",
+    "styles": {
+      "primaryColor": "#111827",
+      "accentColor": "#059669",
+      "fontFamily": "'Segoe UI', Arial, sans-serif",
+      "nameSize": 14,
+      "nameBold": true,
+      "nameUppercase": false,
+      "nameColor": "#111827",
+      "titleSize": 12,
+      "titleItalic": false,
+      "titleColor": "#6b7280",
+      "contactSize": 12,
+      "contactColor": "#374151",
+      "borderColor": "#059669",
+      "dividerWidth": 0,
+      "photoSize": 60,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://cloudforce.cz/wp-content/uploads/2026/05/logo-cloudforce.png",
+      "logoWidth": 120,
+      "logoLink": "https://cloudforce.cz/",
+      "logoInvert": false,
+      "websiteUrl": "https://cloudforce.cz/",
+      "websiteLabel": "www.cloudforce.cz",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "title": true,
+      "divider": false,
+      "logo": true,
+      "phone": true,
+      "email": true,
+      "web": true,
+      "menu": false,
+      "photo": false,
+      "social": false,
+      "qr": true,
+      "mobile": true,
+      "address": true,
+      "pronouns": true,
+      "department": true
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": false,
+      "platforms": []
+    },
+    "qr": {
+      "enabled": true
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {},
+    "default": false,
+    "disclaimer": ""
+  }
+]
