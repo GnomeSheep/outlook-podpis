@@ -257,7 +257,70 @@ function renderSignatureHTML(skin, user, opts){
       </td></tr>
       ${banner?`<tr><td>${banner}</td></tr>`:''}
     </table>`;
-  } else { /* stacked */
+  } else if (skin.layout==='hero'){
+    /* HERO — display-style: large centered name, generous spacing, line, info row */
+    const heroAccent = st.accentColor || st.primaryColor || '#23457a';
+    const heroName = nameBlock.replace(/font-size:\d+px;line-height:\d+px;/, `font-size:${(st.nameSize||16)+10}px;line-height:${(st.nameSize||16)+12}px;letter-spacing:0.02em;`);
+    body=`<table cellpadding="0" cellspacing="0" border="0" style="font-family:${ff};color:${st.primaryColor||'#23457a'};border-collapse:collapse;width:100%;max-width:560px;">
+      <tr><td align="center" style="padding:6px 0 4px 0;">${photo?`<div style="margin-bottom:10px;">${photo}</div>`:''}${heroName}</td></tr>
+      <tr><td align="center" style="padding:10px 0 14px 0;">
+        <table cellpadding="0" cellspacing="0" border="0"><tr><td width="80" style="border-top:2px solid ${heroAccent};height:0;line-height:0;font-size:0;">&nbsp;</td></tr></table>
+      </td></tr>
+      <tr><td align="center" style="padding-bottom:10px;">${contact}</td></tr>
+      ${social?`<tr><td align="center">${social}</td></tr>`:''}
+      ${logo?`<tr><td align="center" style="padding-top:10px;">${logo}</td></tr>`:''}
+      ${menu?`<tr><td align="center" style="padding-top:6px;">${menu}</td></tr>`:''}
+      ${qr?`<tr><td align="center" style="padding-top:10px;">${qr}</td></tr>`:''}
+      ${banner?`<tr><td>${banner}</td></tr>`:''}
+    </table>`;
+  } else if (skin.layout==='bordered'){
+    /* BORDERED — entire signature wrapped in a thin frame */
+    const borderColor = st.borderColor || st.primaryColor || '#23457a';
+    body=`<table cellpadding="0" cellspacing="0" border="0" style="font-family:${ff};color:${st.primaryColor||'#23457a'};border-collapse:collapse;border:1.5px solid ${borderColor};border-radius:4px;">
+      <tr><td style="padding:14px 18px;">
+        <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;"><tr>
+          ${photo?`<td style="padding-right:14px;vertical-align:top;">${photo}</td>`:''}
+          <td style="vertical-align:top;">${nameBlock}${divider}</td>
+        </tr></table>
+        <div style="margin-top:10px;padding-top:8px;border-top:1px solid ${borderColor}33;">${contact}${social}</div>
+        ${logo||menu?`<div style="margin-top:10px;padding-top:8px;border-top:1px solid ${borderColor}33;">${logo}${menu}</div>`:''}
+        ${qr?`<div style="padding-top:8px;">${qr}</div>`:''}
+      </td></tr>
+      ${banner?`<tr><td>${banner}</td></tr>`:''}
+    </table>`;
+  } else if (skin.layout==='left-bar'){
+    /* LEFT-BAR — thick colored bar on the left */
+    const barColor = st.borderColor || st.accentColor || '#1fc09f';
+    const barWidth = st.barWidth || 6;
+    body=`<table cellpadding="0" cellspacing="0" border="0" style="font-family:${ff};color:${st.primaryColor||'#23457a'};border-collapse:collapse;">
+      <tr>
+        <td style="background:${barColor};width:${barWidth}px;font-size:1px;line-height:1px;">&nbsp;</td>
+        <td style="padding:4px 0 4px 18px;vertical-align:top;">
+          ${photo?`<table cellpadding=0 cellspacing=0 border=0 style="margin-bottom:4px;"><tr><td style="padding-right:12px;vertical-align:top;">${photo}</td><td style="vertical-align:top;">${nameBlock}${divider}</td></tr></table>`:`${nameBlock}${divider}`}
+          <div style="margin-top:8px;">${contact}</div>
+          ${social}
+          ${logo?`<div style="margin-top:10px;">${logo}</div>`:''}
+          ${menu?`<div style="margin-top:6px;">${menu}</div>`:''}
+          ${qr?`<div style="margin-top:8px;">${qr}</div>`:''}
+        </td>
+      </tr>
+      ${banner?`<tr><td colspan="2">${banner}</td></tr>`:''}
+    </table>`;
+  } else if (skin.layout==='letterhead'){
+    /* LETTERHEAD — traditional, centered, formal */
+    const lhLine = st.dividerColor || st.primaryColor || '#23457a';
+    body=`<table cellpadding="0" cellspacing="0" border="0" style="font-family:${ff};color:${st.primaryColor||'#23457a'};border-collapse:collapse;width:100%;max-width:540px;">
+      ${logo?`<tr><td align="center" style="padding-bottom:12px;">${logo}</td></tr>`:''}
+      <tr><td align="center" style="border-top:1px solid ${lhLine};border-bottom:1px solid ${lhLine};padding:14px 0;">
+        ${nameBlock}
+      </td></tr>
+      <tr><td align="center" style="padding:12px 0 6px 0;">${contact}</td></tr>
+      ${social?`<tr><td align="center" style="padding-top:4px;">${social}</td></tr>`:''}
+      ${menu?`<tr><td align="center" style="padding-top:8px;">${menu}</td></tr>`:''}
+      ${qr?`<tr><td align="center" style="padding-top:10px;">${qr}</td></tr>`:''}
+      ${banner?`<tr><td>${banner}</td></tr>`:''}
+    </table>`;
+  } else { /* stacked — fallback */
     const darkBg=st.darkBg?`background:${st.darkBg};padding:16px 20px;border-radius:8px;`:'';
     const lb=st.borderColor?`border-left:3px solid ${st.borderColor};padding-left:14px;`:'';
     body=`<table cellpadding="0" cellspacing="0" border="0" style="font-family:${ff};color:${st.primaryColor||'#23457a'};border-collapse:collapse;${darkBg}">

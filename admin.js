@@ -46,6 +46,10 @@ const LAYOUTS = [
   { id: 'two-column', label: 'Dva sloupce',  bars: [[40,18],[60,12],[80,12]] },
   { id: 'stacked',    label: 'Jeden sloupec',bars: [[60,12],[80,12],[40,12]] },
   { id: 'card',       label: 'Karta',        bars: [[100,16],[60,12],[80,12]] },
+  { id: 'hero',       label: 'Hero',         bars: [[80,18],[40,4],[60,10]] },
+  { id: 'bordered',   label: 'Rámeček',      bars: [[70,14],[70,12],[70,12]] },
+  { id: 'left-bar',   label: 'Levá lišta',   bars: [[60,14],[70,12],[80,12]] },
+  { id: 'letterhead', label: 'Letterhead',   bars: [[60,16],[80,12],[60,12]] },
 ];
 
 const SOCIAL_PLATFORMS = [
@@ -698,20 +702,45 @@ const inspector = {
       const card = elt('div', { class:'layout-card' + (skin.layout === layout.id ? ' active' : ''),
         onclick: () => { patch(skin, 'layout', layout.id); refreshLight(); this.render(); }});
       const ico = elt('div', { class:'ico' });
+      // Generic icon renderer: stack of bars defined per layout
       if (layout.id === 'two-column'){
         ico.style.flexDirection = 'row';
         ico.appendChild(elt('div', { style:{width:'10px',height:'24px'} }));
         ico.appendChild(elt('div', { style:{width:'14px',height:'24px'} }));
-      } else if (layout.id === 'stacked'){
-        ico.style.flexDirection = 'column';
-        ico.appendChild(elt('div', { style:{width:'24px',height:'4px'} }));
-        ico.appendChild(elt('div', { style:{width:'18px',height:'3px'} }));
-        ico.appendChild(elt('div', { style:{width:'22px',height:'3px'} }));
-      } else {
+      } else if (layout.id === 'card'){
         ico.style.flexDirection = 'column';
         ico.style.gap = '0';
         ico.appendChild(elt('div', { style:{width:'28px',height:'8px',background:'currentColor',opacity:'1'} }));
         ico.appendChild(elt('div', { style:{width:'28px',height:'14px',background:'rgba(255,255,255,0.1)',border:'1px solid currentColor',marginTop:'-1px'} }));
+      } else if (layout.id === 'hero'){
+        ico.style.flexDirection = 'column';
+        ico.style.alignItems = 'center';
+        ico.appendChild(elt('div', { style:{width:'22px',height:'5px'} }));
+        ico.appendChild(elt('div', { style:{width:'10px',height:'2px',marginTop:'2px'} }));
+        ico.appendChild(elt('div', { style:{width:'16px',height:'3px',marginTop:'3px'} }));
+      } else if (layout.id === 'bordered'){
+        ico.appendChild(elt('div', { style:{width:'26px',height:'24px',border:'1.5px solid currentColor',background:'transparent'} }));
+      } else if (layout.id === 'left-bar'){
+        ico.style.flexDirection = 'row';
+        ico.style.alignItems = 'stretch';
+        ico.appendChild(elt('div', { style:{width:'4px',height:'24px',opacity:'1'} }));
+        ico.appendChild(elt('div', { style:{display:'flex',flexDirection:'column',gap:'3px',justifyContent:'center',marginLeft:'4px'} },
+          elt('div',{style:{width:'18px',height:'3px'}}),
+          elt('div',{style:{width:'14px',height:'2px'}}),
+          elt('div',{style:{width:'16px',height:'2px'}}),
+        ));
+      } else if (layout.id === 'letterhead'){
+        ico.style.flexDirection = 'column';
+        ico.style.alignItems = 'center';
+        ico.appendChild(elt('div', { style:{width:'24px',height:'1px',background:'currentColor',opacity:'1'} }));
+        ico.appendChild(elt('div', { style:{width:'14px',height:'4px',marginTop:'2px'} }));
+        ico.appendChild(elt('div', { style:{width:'24px',height:'1px',background:'currentColor',opacity:'1',marginTop:'2px'} }));
+        ico.appendChild(elt('div', { style:{width:'16px',height:'2px',marginTop:'3px'} }));
+      } else { /* stacked */
+        ico.style.flexDirection = 'column';
+        ico.appendChild(elt('div', { style:{width:'24px',height:'4px'} }));
+        ico.appendChild(elt('div', { style:{width:'18px',height:'3px'} }));
+        ico.appendChild(elt('div', { style:{width:'22px',height:'3px'} }));
       }
       card.appendChild(ico);
       card.appendChild(elt('div', { class:'lbl' }, layout.label));

@@ -1,82 +1,71 @@
 [
   {
-    "id": "cloudforce",
-    "name": "CloudForce Original",
+    "id": "skin_1780257949417_1079",
+    "name": "Deep Navy Banker",
+    "category": "Finance",
     "layout": "two-column",
+    "default": true,
+    "disclaimer": "",
     "styles": {
-      "primaryColor": "#23457a",
-      "accentColor": "#1fc09f",
+      "primaryColor": "#0a2540",
+      "accentColor": "#00d4aa",
       "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
       "nameSize": 16,
       "nameBold": true,
       "nameUppercase": true,
-      "nameColor": "#23457a",
-      "titleSize": 14,
-      "titleItalic": true,
-      "titleColor": "#000000",
-      "contactSize": 14,
-      "contactColor": "#23457a",
-      "dividerColor": "#1fc09f",
-      "dividerWidth": 58,
-      "separatorColor": "#bfc0c5",
+      "nameColor": "#0a2540",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#0a2540",
+      "dividerColor": "#00d4aa",
+      "dividerWidth": 72,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#0a2540",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
       "photoSize": 64,
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://cloudforce.cz/wp-content/uploads/2026/05/logo-cloudforce.png",
-      "logoWidth": 200,
-      "logoLink": "https://cloudforce.cz/",
+      "logoUrl": "https://via.placeholder.com/200x60/0a2540/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
       "logoInvert": false,
-      "websiteUrl": "https://cloudforce.cz/",
-      "websiteLabel": "www.cloudforce.cz",
-      "phoneIconUrl": "https://cloudforce.cz/wp-content/uploads/2026/05/icon-phone.png",
-      "emailIconUrl": "https://cloudforce.cz/wp-content/uploads/2026/05/icon-email.png",
-      "webIconUrl": "https://cloudforce.cz/wp-content/uploads/2026/05/icon-web.png"
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
     },
     "blocks": {
       "name": true,
+      "pronouns": false,
       "title": true,
+      "department": true,
       "divider": true,
       "logo": true,
       "phone": true,
+      "mobile": true,
       "email": true,
       "web": true,
-      "menu": true,
+      "address": true,
+      "menu": false,
       "photo": false,
       "social": true,
-      "qr": false,
-      "mobile": true,
-      "address": true,
-      "pronouns": true,
-      "department": true
+      "qr": false
     },
     "menu": {
-      "enabled": true,
-      "items": [
-        {
-          "label": "M365",
-          "url": "https://cloudforce.cz/microsoft-365/"
-        },
-        {
-          "label": "LICENCE",
-          "url": "https://cloudforce.cz/produkt-kategorie/licence-office-365/"
-        },
-        {
-          "label": "APLIKACE",
-          "url": "https://cloudforce.cz/produkt-kategorie/aplikace/"
-        },
-        {
-          "label": "SLUŽBY",
-          "url": "https://cloudforce.cz/produkt-kategorie/sluzby/"
-        }
-      ]
+      "enabled": false,
+      "items": []
     },
     "social": {
       "enabled": true,
       "platforms": [
-        "linkedin",
-        "x",
-        "github"
+        "linkedin"
       ]
     },
     "qr": {
@@ -95,71 +84,414 @@
       "enabled": false,
       "styles": {}
     },
-    "translations": {
-      "en": {
-        "websiteLabel": "www.cloudforce.cz",
-        "menu": [
-          "M365",
-          "LICENSES",
-          "APPS",
-          "SERVICES"
-        ],
-        "disclaimer": "This e-mail and its attachments may contain confidential information. If you are not the intended recipient, please delete it."
-      }
-    },
-    "default": true,
-    "disclaimer": "Tento e-mail a jeho přílohy mohou obsahovat důvěrné informace. Pokud nejste zamýšleným příjemcem, zprávu prosím smažte."
+    "translations": {}
   },
   {
-    "id": "dark",
-    "name": "Dark Mode",
-    "layout": "stacked",
+    "id": "skin_1780257949417_6457",
+    "name": "Royal Trust",
+    "category": "Finance",
+    "layout": "letterhead",
+    "default": false,
+    "disclaimer": "",
     "styles": {
-      "primaryColor": "#c7d2fe",
-      "accentColor": "#6366f1",
-      "fontFamily": "'Segoe UI', Arial, sans-serif",
-      "nameSize": 15,
+      "primaryColor": "#002868",
+      "accentColor": "#c5a572",
+      "fontFamily": "Georgia, 'Times New Roman', serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#002868",
+      "titleSize": 13,
+      "titleItalic": true,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#002868",
+      "dividerColor": "#c5a572",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#002868",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/002868/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_2268",
+    "name": "Wall Street",
+    "category": "Finance",
+    "layout": "stacked",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#1f2937",
+      "accentColor": "#d97706",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#1f2937",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#1f2937",
+      "dividerColor": "#d97706",
+      "dividerWidth": 40,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#1f2937",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/1f2937/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_8820",
+    "name": "Insurance Blue",
+    "category": "Finance",
+    "layout": "bordered",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#1e3a8a",
+      "accentColor": "#f59e0b",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#1e3a8a",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#1e3a8a",
+      "dividerColor": "#f59e0b",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#1e3a8a",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "#1e3a8a",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/1e3a8a/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_7365",
+    "name": "Audit Charcoal",
+    "category": "Finance",
+    "layout": "two-column",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#374151",
+      "accentColor": "#10b981",
+      "fontFamily": "'Trebuchet MS', sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#374151",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#374151",
+      "dividerColor": "#10b981",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#374151",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/374151/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_0646",
+    "name": "Cyber Lime",
+    "category": "Tech",
+    "layout": "stacked",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#0d0f14",
+      "accentColor": "#d4ff4c",
+      "fontFamily": "'Courier New', Courier, monospace",
+      "nameSize": 16,
       "nameBold": true,
       "nameUppercase": true,
       "nameColor": "#ffffff",
-      "titleSize": 12,
+      "titleSize": 13,
       "titleItalic": false,
-      "titleColor": "#6366f1",
-      "contactSize": 12,
+      "titleColor": "#d4ff4c",
+      "contactSize": 13,
       "contactColor": "#9ca3af",
-      "darkBg": "#111827",
-      "dividerColor": "#6366f1",
-      "dividerWidth": 50,
-      "photoSize": 56,
+      "dividerColor": "#d4ff4c",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#0d0f14",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "#0d0f14",
+      "photoSize": 64,
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://cloudforce.cz/wp-content/uploads/2026/05/logo-cloudforce.png",
-      "logoWidth": 150,
-      "logoLink": "https://cloudforce.cz/",
+      "logoUrl": "https://via.placeholder.com/200x60/0d0f14/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
       "logoInvert": true,
-      "websiteUrl": "https://cloudforce.cz/",
-      "websiteLabel": "www.cloudforce.cz",
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
       "phoneIconUrl": "",
       "emailIconUrl": "",
       "webIconUrl": ""
     },
     "blocks": {
       "name": true,
+      "pronouns": false,
       "title": true,
+      "department": true,
       "divider": true,
       "logo": true,
       "phone": true,
+      "mobile": true,
       "email": true,
       "web": true,
-      "menu": false,
-      "photo": true,
-      "social": true,
-      "qr": false,
-      "mobile": true,
       "address": true,
-      "pronouns": true,
-      "department": true
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
     },
     "menu": {
       "enabled": false,
@@ -169,7 +501,8 @@
       "enabled": true,
       "platforms": [
         "linkedin",
-        "github"
+        "github",
+        "x"
       ]
     },
     "qr": {
@@ -188,70 +521,79 @@
       "enabled": false,
       "styles": {}
     },
-    "translations": {},
-    "default": false,
-    "disclaimer": ""
+    "translations": {}
   },
   {
-    "id": "minimal",
-    "name": "Minimal",
-    "layout": "stacked",
+    "id": "skin_1780257949417_0744",
+    "name": "Electric Indigo",
+    "category": "Tech",
+    "layout": "card",
+    "default": false,
+    "disclaimer": "",
     "styles": {
-      "primaryColor": "#111827",
-      "accentColor": "#059669",
-      "fontFamily": "'Segoe UI', Arial, sans-serif",
-      "nameSize": 14,
+      "primaryColor": "#1e1b4b",
+      "accentColor": "#818cf8",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
       "nameBold": true,
-      "nameUppercase": false,
-      "nameColor": "#111827",
-      "titleSize": 12,
+      "nameUppercase": true,
+      "nameColor": "#1e1b4b",
+      "titleSize": 13,
       "titleItalic": false,
-      "titleColor": "#6b7280",
-      "contactSize": 12,
-      "contactColor": "#374151",
-      "borderColor": "#059669",
-      "dividerWidth": 0,
-      "photoSize": 60,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#1e1b4b",
+      "dividerColor": "#818cf8",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#1e1b4b",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#eef2ff",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://cloudforce.cz/wp-content/uploads/2026/05/logo-cloudforce.png",
-      "logoWidth": 120,
-      "logoLink": "https://cloudforce.cz/",
+      "logoUrl": "https://via.placeholder.com/200x60/1e1b4b/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
       "logoInvert": false,
-      "websiteUrl": "https://cloudforce.cz/",
-      "websiteLabel": "www.cloudforce.cz",
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
       "phoneIconUrl": "",
       "emailIconUrl": "",
       "webIconUrl": ""
     },
     "blocks": {
       "name": true,
+      "pronouns": false,
       "title": true,
-      "divider": false,
+      "department": true,
+      "divider": true,
       "logo": true,
       "phone": true,
+      "mobile": true,
       "email": true,
       "web": true,
+      "address": true,
       "menu": false,
       "photo": false,
-      "social": false,
-      "qr": true,
-      "mobile": true,
-      "address": true,
-      "pronouns": true,
-      "department": true
+      "social": true,
+      "qr": false
     },
     "menu": {
       "enabled": false,
       "items": []
     },
     "social": {
-      "enabled": false,
-      "platforms": []
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
     },
     "qr": {
-      "enabled": true
+      "enabled": false
     },
     "banner": {
       "enabled": false,
@@ -266,8 +608,4097 @@
       "enabled": false,
       "styles": {}
     },
-    "translations": {},
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_6729",
+    "name": "Dev Console",
+    "category": "Tech",
+    "layout": "left-bar",
     "default": false,
-    "disclaimer": ""
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#0d1117",
+      "accentColor": "#58a6ff",
+      "fontFamily": "'Courier New', Courier, monospace",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#ffffff",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#58a6ff",
+      "contactSize": 13,
+      "contactColor": "#c9d1d9",
+      "dividerColor": "#58a6ff",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#0d1117",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "#58a6ff",
+      "darkBg": "#0d1117",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/0d1117/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": true,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "github",
+        "linkedin",
+        "x"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_9203",
+    "name": "SaaS Modern",
+    "category": "Tech",
+    "layout": "two-column",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#2563eb",
+      "accentColor": "#06b6d4",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#2563eb",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#2563eb",
+      "dividerColor": "#06b6d4",
+      "dividerWidth": 80,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#2563eb",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/2563eb/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_2684",
+    "name": "AI Lab",
+    "category": "Tech",
+    "layout": "hero",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#111827",
+      "accentColor": "#a855f7",
+      "fontFamily": "'Trebuchet MS', sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#ffffff",
+      "titleSize": 13,
+      "titleItalic": true,
+      "titleColor": "#a855f7",
+      "contactSize": 13,
+      "contactColor": "#d1d5db",
+      "dividerColor": "#a855f7",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#111827",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "#111827",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/111827/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": true,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_7095",
+    "name": "Startup Coral",
+    "category": "Tech",
+    "layout": "card",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#f97316",
+      "accentColor": "#0ea5e9",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#f97316",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#f97316",
+      "dividerColor": "#0ea5e9",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#f97316",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/f97316/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": true,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_5544",
+    "name": "Old Burgundy",
+    "category": "Právní",
+    "layout": "letterhead",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#6b1d3c",
+      "accentColor": "#c9b885",
+      "fontFamily": "Georgia, 'Times New Roman', serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#6b1d3c",
+      "titleSize": 13,
+      "titleItalic": true,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#6b1d3c",
+      "dividerColor": "#c9b885",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#6b1d3c",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/6b1d3c/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_6331",
+    "name": "Notarial Gold",
+    "category": "Právní",
+    "layout": "bordered",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#1a1a2e",
+      "accentColor": "#c8aa6e",
+      "fontFamily": "Georgia, 'Times New Roman', serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#1a1a2e",
+      "titleSize": 13,
+      "titleItalic": true,
+      "titleColor": "#1a1a2e",
+      "contactSize": 13,
+      "contactColor": "#1a1a2e",
+      "dividerColor": "#c8aa6e",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#1a1a2e",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "#c8aa6e",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/1a1a2e/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_1589",
+    "name": "Court Crimson",
+    "category": "Právní",
+    "layout": "two-column",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#8b0000",
+      "accentColor": "#f5f5dc",
+      "fontFamily": "Georgia, 'Times New Roman', serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#8b0000",
+      "titleSize": 13,
+      "titleItalic": true,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#8b0000",
+      "dividerColor": "#8b0000",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#8b0000",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/8b0000/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_6235",
+    "name": "Solicitor Forest",
+    "category": "Právní",
+    "layout": "stacked",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#1b3a2f",
+      "accentColor": "#c19a6b",
+      "fontFamily": "Georgia, 'Times New Roman', serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#1b3a2f",
+      "titleSize": 13,
+      "titleItalic": true,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#1b3a2f",
+      "dividerColor": "#c19a6b",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#1b3a2f",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "#c19a6b",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/1b3a2f/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_0050",
+    "name": "Bold Tangerine",
+    "category": "Kreativní",
+    "layout": "hero",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#ff6b35",
+      "accentColor": "#004e89",
+      "fontFamily": "'Trebuchet MS', sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#ff6b35",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#ff6b35",
+      "dividerColor": "#004e89",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#ff6b35",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/ff6b35/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": true,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_4424",
+    "name": "Studio Mint",
+    "category": "Kreativní",
+    "layout": "card",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#f72585",
+      "accentColor": "#4cc9f0",
+      "fontFamily": "'Trebuchet MS', sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#f72585",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#f72585",
+      "dividerColor": "#4cc9f0",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#f72585",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/f72585/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_2714",
+    "name": "Designer Noir",
+    "category": "Kreativní",
+    "layout": "left-bar",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#000000",
+      "accentColor": "#ff4b6e",
+      "fontFamily": "'Trebuchet MS', sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#000000",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#ff4b6e",
+      "contactSize": 13,
+      "contactColor": "#000000",
+      "dividerColor": "#ff4b6e",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#000000",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "#ff4b6e",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/000000/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_8662",
+    "name": "Maker's Yellow",
+    "category": "Kreativní",
+    "layout": "bordered",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#ffd60a",
+      "accentColor": "#001d3d",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#001d3d",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#001d3d",
+      "contactSize": 13,
+      "contactColor": "#001d3d",
+      "dividerColor": "#001d3d",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#ffd60a",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "#001d3d",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/ffd60a/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_4823",
+    "name": "Atelier Coral",
+    "category": "Kreativní",
+    "layout": "two-column",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#ff6b6b",
+      "accentColor": "#4ecdc4",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#ff6b6b",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#ff6b6b",
+      "dividerColor": "#4ecdc4",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#ff6b6b",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/ff6b6b/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": true,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_2897",
+    "name": "Hospital Mint",
+    "category": "Zdravotnictví",
+    "layout": "stacked",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#0d9488",
+      "accentColor": "#5eead4",
+      "fontFamily": "'Segoe UI', Arial, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#0d9488",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#0d9488",
+      "dividerColor": "#5eead4",
+      "dividerWidth": 60,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#0d9488",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/0d9488/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_8137",
+    "name": "Wellness Sage",
+    "category": "Zdravotnictví",
+    "layout": "two-column",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#5e8b7e",
+      "accentColor": "#a7c4bc",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#5e8b7e",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#5e8b7e",
+      "dividerColor": "#a7c4bc",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#5e8b7e",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/5e8b7e/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_1555",
+    "name": "Clinic Sky",
+    "category": "Zdravotnictví",
+    "layout": "card",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#0284c7",
+      "accentColor": "#7dd3fc",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#0284c7",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#0284c7",
+      "dividerColor": "#7dd3fc",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#0284c7",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#f0f9ff",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/0284c7/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": true,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_5390",
+    "name": "Pharma Pure",
+    "category": "Zdravotnictví",
+    "layout": "bordered",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#059669",
+      "accentColor": "#a7f3d0",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#059669",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#059669",
+      "dividerColor": "#a7f3d0",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#059669",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "#059669",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/059669/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_8041",
+    "name": "Academic Maroon",
+    "category": "Vzdělávání",
+    "layout": "letterhead",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#7b1d3c",
+      "accentColor": "#f0e6cc",
+      "fontFamily": "Georgia, 'Times New Roman', serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#7b1d3c",
+      "titleSize": 13,
+      "titleItalic": true,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#7b1d3c",
+      "dividerColor": "#f0e6cc",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#7b1d3c",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/7b1d3c/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_8220",
+    "name": "Library Mocha",
+    "category": "Vzdělávání",
+    "layout": "stacked",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#4a3c2e",
+      "accentColor": "#c9b885",
+      "fontFamily": "Georgia, 'Times New Roman', serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#4a3c2e",
+      "titleSize": 13,
+      "titleItalic": true,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#4a3c2e",
+      "dividerColor": "#c9b885",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#4a3c2e",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/4a3c2e/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_1778",
+    "name": "Lecture Hall",
+    "category": "Vzdělávání",
+    "layout": "two-column",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#3730a3",
+      "accentColor": "#fbbf24",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#3730a3",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#3730a3",
+      "dividerColor": "#fbbf24",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#3730a3",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/3730a3/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_9514",
+    "name": "Luxury Estate",
+    "category": "Reality",
+    "layout": "letterhead",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#1a1a1a",
+      "accentColor": "#c9a96e",
+      "fontFamily": "Georgia, 'Times New Roman', serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#1a1a1a",
+      "titleSize": 13,
+      "titleItalic": true,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#1a1a1a",
+      "dividerColor": "#c9a96e",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#1a1a1a",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/1a1a1a/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": true,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_0012",
+    "name": "Mediterranean Villa",
+    "category": "Reality",
+    "layout": "card",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#06506f",
+      "accentColor": "#e9c46a",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#06506f",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#06506f",
+      "dividerColor": "#e9c46a",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#06506f",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fdf6e3",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/06506f/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_0648",
+    "name": "Manor House",
+    "category": "Reality",
+    "layout": "two-column",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#2c3e50",
+      "accentColor": "#c0392b",
+      "fontFamily": "Georgia, 'Times New Roman', serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#2c3e50",
+      "titleSize": 13,
+      "titleItalic": true,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#2c3e50",
+      "dividerColor": "#c0392b",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#2c3e50",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/2c3e50/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_4568",
+    "name": "Bistro Wine",
+    "category": "Gastro",
+    "layout": "letterhead",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#6f1d1b",
+      "accentColor": "#e9c46a",
+      "fontFamily": "Georgia, 'Times New Roman', serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#6f1d1b",
+      "titleSize": 13,
+      "titleItalic": true,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#6f1d1b",
+      "dividerColor": "#e9c46a",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#6f1d1b",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/6f1d1b/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_3343",
+    "name": "Cafe Mocha",
+    "category": "Gastro",
+    "layout": "card",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#774936",
+      "accentColor": "#ffba49",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#774936",
+      "titleSize": 13,
+      "titleItalic": true,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#774936",
+      "dividerColor": "#ffba49",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#774936",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fdf2e9",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/774936/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": true,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_4176",
+    "name": "Cellar Brick",
+    "category": "Gastro",
+    "layout": "left-bar",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#5e1a1a",
+      "accentColor": "#b08968",
+      "fontFamily": "Georgia, 'Times New Roman', serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#5e1a1a",
+      "titleSize": 13,
+      "titleItalic": true,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#5e1a1a",
+      "dividerColor": "#b08968",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#5e1a1a",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "#b08968",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/5e1a1a/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_0971",
+    "name": "Boutique Noir",
+    "category": "Móda",
+    "layout": "hero",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#0d0d0d",
+      "accentColor": "#d4af37",
+      "fontFamily": "Georgia, 'Times New Roman', serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#0d0d0d",
+      "titleSize": 13,
+      "titleItalic": true,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#0d0d0d",
+      "dividerColor": "#d4af37",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#0d0d0d",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/0d0d0d/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": true,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_8703",
+    "name": "Pastel Bloom",
+    "category": "Móda",
+    "layout": "stacked",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#f4978e",
+      "accentColor": "#fde2e4",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#5e3a35",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#5e3a35",
+      "contactSize": 13,
+      "contactColor": "#5e3a35",
+      "dividerColor": "#fde2e4",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#f4978e",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/f4978e/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_3178",
+    "name": "Atelier Linen",
+    "category": "Móda",
+    "layout": "bordered",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#5e503f",
+      "accentColor": "#f1ddc4",
+      "fontFamily": "Georgia, 'Times New Roman', serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#5e503f",
+      "titleSize": 13,
+      "titleItalic": true,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#5e503f",
+      "dividerColor": "#f1ddc4",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#5e503f",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "#5e503f",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/5e503f/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_1581",
+    "name": "Editorial Vogue",
+    "category": "Móda",
+    "layout": "letterhead",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#000000",
+      "accentColor": "#000000",
+      "fontFamily": "Georgia, 'Times New Roman', serif",
+      "nameSize": 20,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#000000",
+      "titleSize": 13,
+      "titleItalic": true,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#000000",
+      "dividerColor": "#000000",
+      "dividerWidth": 120,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#000000",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/000000/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_0286",
+    "name": "Hot Pink Energy",
+    "category": "Marketing",
+    "layout": "card",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#ff006e",
+      "accentColor": "#3a86ff",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#ff006e",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#ff006e",
+      "dividerColor": "#3a86ff",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#ff006e",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/ff006e/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_8322",
+    "name": "Brand Studio",
+    "category": "Marketing",
+    "layout": "two-column",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#ff5400",
+      "accentColor": "#8338ec",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#ff5400",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#ff5400",
+      "dividerColor": "#8338ec",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#ff5400",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/ff5400/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_6524",
+    "name": "Media Maven",
+    "category": "Marketing",
+    "layout": "hero",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#240046",
+      "accentColor": "#ff5d8f",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#240046",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#ff5d8f",
+      "contactSize": 13,
+      "contactColor": "#240046",
+      "dividerColor": "#ff5d8f",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#240046",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/240046/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_5078",
+    "name": "Mentor Sage",
+    "category": "Konzultace",
+    "layout": "stacked",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#5e8b7e",
+      "accentColor": "#a7c4bc",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#5e8b7e",
+      "titleSize": 13,
+      "titleItalic": true,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#5e8b7e",
+      "dividerColor": "#a7c4bc",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#5e8b7e",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "#5e8b7e",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/5e8b7e/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": true,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_0171",
+    "name": "Coach Mocha",
+    "category": "Konzultace",
+    "layout": "two-column",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#3c2415",
+      "accentColor": "#c9a96e",
+      "fontFamily": "Georgia, 'Times New Roman', serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#3c2415",
+      "titleSize": 13,
+      "titleItalic": true,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#3c2415",
+      "dividerColor": "#c9a96e",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#3c2415",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/3c2415/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": true,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_6181",
+    "name": "Therapy Lavender",
+    "category": "Konzultace",
+    "layout": "card",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#4a306d",
+      "accentColor": "#d8b4f8",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#4a306d",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#4a306d",
+      "dividerColor": "#d8b4f8",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#4a306d",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#f5f3ff",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/4a306d/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": true,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_0084",
+    "name": "Forest Deep",
+    "category": "Eko",
+    "layout": "left-bar",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#1d3320",
+      "accentColor": "#95c623",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#1d3320",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#1d3320",
+      "contactSize": 13,
+      "contactColor": "#1d3320",
+      "dividerColor": "#95c623",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#1d3320",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "#95c623",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/1d3320/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_9132",
+    "name": "Soil & Sky",
+    "category": "Eko",
+    "layout": "stacked",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#5f4b32",
+      "accentColor": "#a8c686",
+      "fontFamily": "Georgia, 'Times New Roman', serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#5f4b32",
+      "titleSize": 13,
+      "titleItalic": true,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#5f4b32",
+      "dividerColor": "#a8c686",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#5f4b32",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/5f4b32/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_8337",
+    "name": "Ocean Eco",
+    "category": "Eko",
+    "layout": "two-column",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#0d3b66",
+      "accentColor": "#06aed5",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#0d3b66",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#0d3b66",
+      "dividerColor": "#06aed5",
+      "dividerWidth": 70,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#0d3b66",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/0d3b66/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_0269",
+    "name": "Cargo Yellow",
+    "category": "Logistika",
+    "layout": "card",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#f4b942",
+      "accentColor": "#1d1d1f",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#f4b942",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#f4b942",
+      "dividerColor": "#1d1d1f",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#1d1d1f",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/f4b942/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_9532",
+    "name": "Express Red",
+    "category": "Logistika",
+    "layout": "left-bar",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#c1121f",
+      "accentColor": "#003049",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#c1121f",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#c1121f",
+      "dividerColor": "#003049",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#c1121f",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "#c1121f",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/c1121f/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_1834",
+    "name": "Steel Industry",
+    "category": "Logistika",
+    "layout": "two-column",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#283d3b",
+      "accentColor": "#f4a261",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#283d3b",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#283d3b",
+      "dividerColor": "#f4a261",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#283d3b",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/283d3b/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_0390",
+    "name": "Wanderlust Sky",
+    "category": "Cestovní",
+    "layout": "hero",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#006ba6",
+      "accentColor": "#f9c80e",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#006ba6",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#006ba6",
+      "dividerColor": "#f9c80e",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#006ba6",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/006ba6/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": true,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_5461",
+    "name": "Coastal Bliss",
+    "category": "Cestovní",
+    "layout": "card",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#3a86ff",
+      "accentColor": "#ffbe0b",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#3a86ff",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#3a86ff",
+      "dividerColor": "#ffbe0b",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#3a86ff",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#e0f2fe",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/3a86ff/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_8669",
+    "name": "Modern Mono",
+    "category": "Univerzální",
+    "layout": "stacked",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#000000",
+      "accentColor": "#ff4d4f",
+      "fontFamily": "'Trebuchet MS', sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#000000",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#000000",
+      "dividerColor": "#ff4d4f",
+      "dividerWidth": 40,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#000000",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/000000/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_7444",
+    "name": "Pro Charcoal",
+    "category": "Univerzální",
+    "layout": "two-column",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#2b2d42",
+      "accentColor": "#ef233c",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#2b2d42",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#2b2d42",
+      "dividerColor": "#ef233c",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#2b2d42",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/2b2d42/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
+  },
+  {
+    "id": "skin_1780257949417_1149",
+    "name": "Timeless Indigo",
+    "category": "Univerzální",
+    "layout": "bordered",
+    "default": false,
+    "disclaimer": "",
+    "styles": {
+      "primaryColor": "#3a0ca3",
+      "accentColor": "#f72585",
+      "fontFamily": "'Segoe UI', Arial, Helvetica, sans-serif",
+      "nameSize": 16,
+      "nameBold": true,
+      "nameUppercase": true,
+      "nameColor": "#3a0ca3",
+      "titleSize": 13,
+      "titleItalic": false,
+      "titleColor": "#444444",
+      "contactSize": 13,
+      "contactColor": "#3a0ca3",
+      "dividerColor": "#f72585",
+      "dividerWidth": 58,
+      "separatorColor": "#d1d5db",
+      "cardHeaderBg": "#3a0ca3",
+      "cardHeaderTextColor": "#ffffff",
+      "cardBodyBg": "#fafafa",
+      "borderColor": "#3a0ca3",
+      "darkBg": "",
+      "photoSize": 64,
+      "photoRound": true
+    },
+    "company": {
+      "logoUrl": "https://via.placeholder.com/200x60/3a0ca3/ffffff?text=LOGO",
+      "logoWidth": 180,
+      "logoLink": "https://example.com/",
+      "logoInvert": false,
+      "websiteUrl": "https://example.com/",
+      "websiteLabel": "www.example.com",
+      "phoneIconUrl": "",
+      "emailIconUrl": "",
+      "webIconUrl": ""
+    },
+    "blocks": {
+      "name": true,
+      "pronouns": false,
+      "title": true,
+      "department": true,
+      "divider": true,
+      "logo": true,
+      "phone": true,
+      "mobile": true,
+      "email": true,
+      "web": true,
+      "address": true,
+      "menu": false,
+      "photo": false,
+      "social": true,
+      "qr": false
+    },
+    "menu": {
+      "enabled": false,
+      "items": []
+    },
+    "social": {
+      "enabled": true,
+      "platforms": [
+        "linkedin"
+      ]
+    },
+    "qr": {
+      "enabled": false
+    },
+    "banner": {
+      "enabled": false,
+      "imageUrl": "",
+      "link": "",
+      "alt": "",
+      "width": 500,
+      "startDate": "",
+      "endDate": ""
+    },
+    "darkVariant": {
+      "enabled": false,
+      "styles": {}
+    },
+    "translations": {}
   }
 ]
