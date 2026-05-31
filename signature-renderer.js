@@ -209,6 +209,8 @@ function renderSignatureHTML(skin, user, opts){
   skin = _resolveSkin(skin, opts);
   skin = _applyLang(skin, user.lang);
   user = user || {};
+  const E = !!opts.editor;
+  const tag = (name, html) => E && html ? `<span data-cf-block="${name}" style="display:inline-block;">${html}</span>` : html;
 
   // Short signature for replies/forwards
   if (opts.short){
@@ -218,15 +220,15 @@ function renderSignatureHTML(skin, user, opts){
   const st=skin.styles||{}, ff=st.fontFamily||"'Segoe UI',Arial,sans-serif";
   const sep=st.separatorColor||'#bfc0c5';
 
-  const nameBlock=_nameBlock(skin,user);
-  const divider=_divider(skin);
-  const logo=_logo(skin);
-  const menu=_menu(skin);
-  const contact=_contactTable(skin,user);
-  const social=_socialRow(skin,user);
-  const photo=_photoCell(skin,user);
-  const qr=_qrCell(skin,user);
-  const banner=_bannerRow(skin);
+  const nameBlock=tag('name', _nameBlock(skin,user));
+  const divider=tag('divider', _divider(skin));
+  const logo=tag('logo', _logo(skin));
+  const menu=tag('menu', _menu(skin));
+  const contact=tag('contact', _contactTable(skin,user));
+  const social=tag('social', _socialRow(skin,user));
+  const photo=tag('photo', _photoCell(skin,user));
+  const qr=tag('qr', _qrCell(skin,user));
+  const banner=tag('banner', _bannerRow(skin));
 
   let body='';
 

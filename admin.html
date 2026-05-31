@@ -3,468 +3,1286 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>CloudForce — Návrhář podpisů</title>
+<title>CloudForce · Návrhář podpisů</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{--bg:#f1f4f9;--surface:#fff;--surface2:#f8fafc;--border:#e2e8f0;--accent:#23457a;--green:#1fc09f;--danger:#ef4444;--warn:#f59e0b;--text:#1e293b;--muted:#64748b;--radius:8px;--shadow:0 1px 3px rgba(0,0,0,.08);}
-html,body{height:100%;overflow:hidden;}
-body{font-family:'Segoe UI',Arial,sans-serif;font-size:13px;color:var(--text);background:var(--bg);display:flex;flex-direction:column;}
-.hdr{background:var(--accent);color:#fff;padding:0 16px;height:48px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
-.hdr-brand{display:flex;align-items:center;gap:10px;}
-.hdr-logo{font-size:15px;font-weight:700;letter-spacing:-.02em;}
-.hdr-logo span{color:var(--green);}
-.hdr-sep{width:1px;height:20px;background:rgba(255,255,255,.25);}
-.hdr-title{font-size:12px;opacity:.7;}
-.hdr-actions{display:flex;gap:8px;}
-.btn{padding:6px 12px;border-radius:var(--radius);border:none;cursor:pointer;font-family:inherit;font-size:12px;font-weight:600;transition:all .15s;}
-.btn-ghost{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.25);}
-.btn-ghost:hover{background:rgba(255,255,255,.25);}
-.btn-primary{background:var(--green);color:#fff;}
-.btn-primary:hover{filter:brightness(1.1);}
-.btn-danger{background:var(--danger);color:#fff;}
-.btn-danger:hover{filter:brightness(1.1);}
-.btn-sm{padding:4px 8px;font-size:11px;}
-.main{flex:1;display:flex;overflow:hidden;}
-.left{width:390px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;}
-.skin-list-wrap{padding:12px;border-bottom:1px solid var(--border);flex-shrink:0;}
-.skin-list-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
-.section-title{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
-.skin-list{display:flex;flex-direction:column;gap:4px;max-height:120px;overflow-y:auto;}
-.skin-item{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:var(--radius);border:1px solid var(--border);cursor:pointer;transition:all .12s;background:var(--surface2);}
-.skin-item:hover{border-color:var(--accent);}
-.skin-item.active{border-color:var(--accent);background:rgba(35,69,122,.06);}
-.skin-item-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
-.skin-item-name{flex:1;font-weight:500;font-size:12px;}
-.skin-item-layout{font-size:10px;color:var(--muted);}
-.skin-item-actions{display:flex;gap:4px;opacity:0;transition:opacity .12s;}
-.skin-item:hover .skin-item-actions{opacity:1;}
-.icon-btn{background:none;border:none;cursor:pointer;padding:2px 4px;border-radius:4px;color:var(--muted);font-size:12px;}
-.icon-btn:hover{background:var(--border);color:var(--text);}
-.icon-btn.del:hover{color:var(--danger);background:#fef2f2;}
-.editor{flex:1;overflow-y:auto;padding:12px;}
-.editor-placeholder{color:var(--muted);text-align:center;padding:40px 20px;font-size:12px;}
-.accordion{border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px;overflow:hidden;}
-.acc-header{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;cursor:pointer;background:var(--surface2);user-select:none;}
-.acc-header:hover{background:#eef2f8;}
-.acc-title{font-size:11px;font-weight:700;color:var(--text);}
-.acc-arrow{font-size:10px;color:var(--muted);transition:transform .15s;}
-.acc-header.open .acc-arrow{transform:rotate(180deg);}
-.acc-body{padding:10px 12px;display:none;border-top:1px solid var(--border);background:var(--surface);}
-.acc-body.open{display:block;}
-.field{margin-bottom:9px;}
-.field:last-child{margin-bottom:0;}
-.field-row{display:flex;gap:8px;}
-.field-row .field{flex:1;}
-label{display:block;font-size:10px;font-weight:600;color:var(--muted);margin-bottom:3px;}
-input[type=text],input[type=url],input[type=number],input[type=color],input[type=date],select{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:6px;color:var(--text);font-family:inherit;font-size:12px;padding:5px 8px;outline:none;transition:border-color .15s;}
-input[type=color]{padding:2px 4px;height:28px;cursor:pointer;}
-input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 2px rgba(35,69,122,.1);}
-input[type=checkbox]{width:14px;height:14px;cursor:pointer;accent-color:var(--accent);}
-.checkbox-row{display:flex;align-items:center;gap:6px;margin-bottom:6px;}
-.checkbox-row label{margin:0;font-size:12px;font-weight:400;color:var(--text);cursor:pointer;}
-.layout-btns{display:flex;gap:6px;}
-.layout-btn{flex:1;padding:7px 4px;border:2px solid var(--border);border-radius:6px;background:var(--surface2);cursor:pointer;text-align:center;font-size:10px;font-weight:600;color:var(--muted);transition:all .12s;}
-.layout-btn:hover{border-color:var(--accent);}
-.layout-btn.active{border-color:var(--accent);background:rgba(35,69,122,.06);color:var(--accent);}
-.layout-icon{font-size:16px;display:block;margin-bottom:3px;}
-.menu-item,.lang-item{display:flex;gap:5px;align-items:center;margin-bottom:5px;}
-.menu-item input{flex:1;}
-.menu-item input:first-of-type{flex:0 0 80px;}
-.dropzone{border:1.5px dashed var(--border);border-radius:6px;padding:14px;text-align:center;font-size:11px;color:var(--muted);cursor:pointer;transition:all .15s;}
-.dropzone:hover,.dropzone.drag{border-color:var(--accent);background:rgba(35,69,122,.04);color:var(--accent);}
-.logo-preview{max-width:140px;max-height:50px;margin:8px auto 0;display:none;}
-.social-chk{display:flex;align-items:center;gap:6px;padding:6px 8px;border:1px solid var(--border);border-radius:6px;margin-bottom:5px;cursor:pointer;background:var(--surface2);}
-.social-chk .badge{width:20px;height:20px;border-radius:5px;color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;}
-.social-chk .nm{flex:1;font-size:12px;}
-.editor-actions{padding:12px;border-top:1px solid var(--border);display:flex;gap:6px;flex-shrink:0;}
-.editor-actions .btn{flex:1;}
-.right{flex:1;display:flex;flex-direction:column;overflow:hidden;}
-.preview-tabs{display:flex;border-bottom:1px solid var(--border);background:var(--surface);flex-shrink:0;}
-.ptab{padding:10px 14px;font-size:11px;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;}
-.ptab.active{color:var(--accent);border-bottom-color:var(--green);}
-.right-content{flex:1;overflow:hidden;display:flex;flex-direction:column;}
-.preview-pane,.code-pane{flex:1;overflow:auto;padding:20px;display:none;}
-.preview-pane.active,.code-pane.active{display:block;}
-.testdata{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px;margin-bottom:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
-.testdata span{font-size:10px;text-transform:uppercase;font-weight:700;color:var(--muted);letter-spacing:.06em;}
-.testdata input{flex:1;min-width:90px;background:#fff;border:1px solid var(--border);border-radius:5px;padding:4px 8px;font-size:12px;font-family:inherit;outline:none;}
-.testdata input:focus{border-color:var(--accent);}
-.preview-device{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;max-width:600px;box-shadow:var(--shadow);}
-.preview-sig-divider{border:none;border-top:1px dashed var(--border);margin:16px 0;}
-.code-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
-pre#codeOut{background:#1e293b;color:#e2e8f0;border-radius:var(--radius);padding:14px;font-family:'Courier New',monospace;font-size:11px;line-height:1.6;white-space:pre-wrap;word-break:break-all;overflow:auto;}
-.toast{position:fixed;bottom:16px;right:16px;background:#1e293b;color:#fff;padding:10px 16px;border-radius:var(--radius);font-size:12px;font-weight:500;transform:translateY(20px);opacity:0;transition:all .2s;pointer-events:none;z-index:99;}
-.toast.show{transform:translateY(0);opacity:1;}
-/* validation */
-.valbar{margin-bottom:12px;border-radius:var(--radius);padding:10px 14px;font-size:12px;display:none;}
-.valbar.ok{background:#ecfdf5;border:1px solid #6ee7b7;color:#047857;display:block;}
-.valbar.warn{background:#fffbeb;border:1px solid #fcd34d;color:#92400e;display:block;}
-.valbar ul{margin:6px 0 0 18px;}
-/* modal */
-.modal-bg{position:fixed;inset:0;background:rgba(15,23,42,.5);display:none;align-items:center;justify-content:center;z-index:100;}
-.modal-bg.show{display:flex;}
-.modal{background:#fff;border-radius:12px;width:90%;max-width:640px;max-height:80vh;overflow:auto;padding:20px;}
-.modal h2{font-size:15px;margin-bottom:4px;}
-.modal p{font-size:12px;color:var(--muted);margin-bottom:14px;}
-.tmpl-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.tmpl-card{border:2px solid var(--border);border-radius:8px;padding:10px;cursor:pointer;transition:all .15s;}
-.tmpl-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow);}
-.tmpl-prev{height:54px;border-radius:6px;margin-bottom:8px;overflow:hidden;}
-.tmpl-name{font-size:12px;font-weight:600;}
-.tmpl-sub{font-size:10px;color:var(--muted);}
-.modal-close{float:right;cursor:pointer;color:var(--muted);font-size:18px;border:none;background:none;}
+/* ═══════════════════════════════════════════════════════════════════════════
+   CloudForce Signature Designer — refined editorial dark UI
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Surfaces — graphite editorial */
+  --bg-0:        #0a0b0f;          /* outermost */
+  --bg-1:        #11131a;          /* panels */
+  --bg-2:        #171a23;          /* cards / inputs */
+  --bg-3:        #1d2130;          /* raised */
+  --bg-stage:    #f5f3ee;          /* canvas — warm paper */
+
+  /* Borders */
+  --line:        #232735;
+  --line-2:      #2b3144;
+  --line-hi:     #3b4258;
+
+  /* Text */
+  --ink-0:       #f5f6fb;
+  --ink-1:       #c2c6d4;
+  --ink-2:       #7a8199;
+  --ink-3:       #4d536b;
+
+  /* Brand */
+  --accent:      #d4ff4c;          /* electric lime — distinctive */
+  --accent-ink:  #0a0b0f;
+  --teal:        #4dd0c4;
+  --rose:        #ff6b8a;
+  --amber:       #ffb547;
+
+  /* Type */
+  --display:     'Instrument Serif', Georgia, serif;
+  --sans:        'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono:        'JetBrains Mono', ui-monospace, Menlo, monospace;
+
+  /* Sizing */
+  --r-sm:        4px;
+  --r:           8px;
+  --r-lg:        14px;
+
+  --hdr-h:       54px;
+  --panel-w:     340px;
+
+  /* Motion */
+  --ease-out:    cubic-bezier(.16,1,.3,1);
+  --ease-in-out: cubic-bezier(.65,0,.35,1);
+}
+
+html, body { height: 100%; overflow: hidden; }
+body {
+  font-family: var(--sans);
+  background: var(--bg-0);
+  color: var(--ink-1);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--accent); color: var(--accent-ink); }
+
+/* Custom scrollbars */
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 4px; }
+*::-webkit-scrollbar-thumb:hover { background: var(--line-hi); }
+
+/* ───────── APP LAYOUT ───────── */
+.app {
+  display: grid;
+  grid-template-rows: var(--hdr-h) 1fr;
+  height: 100vh;
+}
+
+/* ═════════ HEADER ═════════ */
+.hdr {
+  display: flex;
+  align-items: center;
+  background: var(--bg-1);
+  border-bottom: 1px solid var(--line);
+  padding: 0 18px;
+  gap: 16px;
+  position: relative;
+  z-index: 20;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--ink-0);
+  letter-spacing: -0.01em;
+  padding-right: 16px;
+  border-right: 1px solid var(--line);
+  margin-right: 4px;
+}
+.brand-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+}
+.brand-sub {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ink-2);
+  margin-left: 4px;
+}
+.hdr-spacer { flex: 1; }
+
+.hdr-tools {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 3px;
+}
+.tool-btn {
+  background: transparent;
+  border: none;
+  color: var(--ink-2);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 5px 9px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.14s var(--ease-out);
+}
+.tool-btn:hover { color: var(--ink-0); background: var(--bg-3); }
+.tool-btn.active { background: var(--accent); color: var(--accent-ink); }
+
+.btn {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.14s var(--ease-out);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: 0 0 0 0 transparent, 0 8px 24px -8px rgba(212,255,76,0.4);
+}
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 0 0 1px rgba(212,255,76,0.3), 0 12px 28px -8px rgba(212,255,76,0.5); }
+.btn-ghost {
+  background: transparent;
+  color: var(--ink-1);
+  border: 1px solid var(--line-2);
+}
+.btn-ghost:hover { border-color: var(--line-hi); color: var(--ink-0); background: var(--bg-2); }
+.btn-icon {
+  width: 32px; height: 32px;
+  padding: 0;
+  justify-content: center;
+  background: var(--bg-2);
+  color: var(--ink-1);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.btn-icon:hover { background: var(--bg-3); color: var(--ink-0); border-color: var(--line-hi); }
+
+/* ═════════ MAIN GRID ═════════ */
+.main {
+  display: grid;
+  grid-template-columns: var(--panel-w) 1fr var(--panel-w);
+  overflow: hidden;
+}
+
+/* ═════════ LEFT PANEL — SKINS ═════════ */
+.left {
+  background: var(--bg-1);
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.panel-head {
+  padding: 18px 18px 12px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.panel-head h2 {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--ink-0);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.panel-head .ct {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-2);
+}
+
+.skin-search {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.skin-search input {
+  width: 100%;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 7px 10px 7px 28px;
+  color: var(--ink-0);
+  font-family: var(--sans);
+  font-size: 12px;
+  outline: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%237a8199' stroke-width='2' viewBox='0 0 24 24'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 9px center;
+}
+.skin-search input:focus { border-color: var(--accent); }
+
+.skin-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 12px 16px;
+}
+.skin-row {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 11px;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-bottom: 3px;
+  transition: background 0.12s var(--ease-out);
+  position: relative;
+}
+.skin-row:hover { background: var(--bg-2); }
+.skin-row.active { background: var(--bg-3); }
+.skin-row.active::before {
+  content: '';
+  position: absolute;
+  left: -12px; top: 8px; bottom: 8px;
+  width: 3px;
+  background: var(--accent);
+  border-radius: 0 2px 2px 0;
+}
+.skin-swatch {
+  width: 28px; height: 28px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+.skin-swatch::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 35%;
+}
+.skin-meta { flex: 1; min-width: 0; }
+.skin-meta .nm {
+  color: var(--ink-0);
+  font-weight: 500;
+  font-size: 12.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.skin-meta .star { color: var(--accent); font-size: 11px; }
+.skin-meta .lo {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-2);
+  margin-top: 2px;
+}
+.skin-actions {
+  display: flex;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+.skin-row:hover .skin-actions, .skin-row.active .skin-actions { opacity: 1; }
+.skin-actions button {
+  background: none;
+  border: none;
+  color: var(--ink-2);
+  cursor: pointer;
+  width: 22px; height: 22px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.12s;
+}
+.skin-actions button:hover { background: var(--line); color: var(--ink-0); }
+.skin-actions button.del:hover { background: var(--rose); color: white; }
+
+.add-skin {
+  margin: 0 12px 14px;
+  padding: 10px;
+  border: 1px dashed var(--line-2);
+  border-radius: 7px;
+  background: transparent;
+  color: var(--ink-2);
+  font-family: var(--sans);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.14s var(--ease-out);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex-shrink: 0;
+}
+.add-skin:hover { border-color: var(--accent); color: var(--accent); background: rgba(212,255,76,0.04); }
+
+/* ═════════ STAGE (CENTER) ═════════ */
+.stage {
+  background: var(--bg-0);
+  position: relative;
+  overflow: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px;
+}
+
+.stage-toolbar {
+  position: absolute;
+  top: 14px; left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+  background: var(--bg-1);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 4px;
+  z-index: 5;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+.stage-toolbar .toggle {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: transparent;
+  border: none;
+  color: var(--ink-2);
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.14s;
+}
+.stage-toolbar .toggle:hover { color: var(--ink-0); }
+.stage-toolbar .toggle.on { background: var(--accent); color: var(--accent-ink); }
+.stage-toolbar .div { width: 1px; background: var(--line); margin: 4px 2px; }
+.stage-toolbar select {
+  background: transparent;
+  border: none;
+  color: var(--ink-1);
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 6px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+.stage-toolbar select option { background: var(--bg-2); color: var(--ink-0); text-transform: none; letter-spacing: normal; }
+
+.canvas-wrap {
+  position: relative;
+  margin-top: 70px;
+  padding: 50px 60px 70px;
+  background: var(--bg-stage);
+  border-radius: 12px;
+  min-width: 620px;
+  max-width: 720px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.04),
+    0 30px 60px -20px rgba(0,0,0,0.6),
+    0 18px 36px -18px rgba(0,0,0,0.5);
+  transition: background 0.3s var(--ease-out);
+}
+.canvas-wrap.dark { background: #1a1d28; }
+.canvas-wrap.mobile { max-width: 380px; min-width: 380px; padding: 30px 24px; }
+
+.canvas-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 18px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  font-family: var(--sans);
+  font-size: 11px;
+  color: rgba(0,0,0,0.4);
+}
+.canvas-wrap.dark .canvas-header { border-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.4); }
+.canvas-header strong { color: rgba(0,0,0,0.7); font-weight: 600; }
+.canvas-wrap.dark .canvas-header strong { color: rgba(255,255,255,0.85); }
+
+.canvas-body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 13px;
+  color: rgba(0,0,0,0.5);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+.canvas-wrap.dark .canvas-body { color: rgba(255,255,255,0.55); }
+
+#sigStage {
+  position: relative;
+  padding-top: 6px;
+}
+
+/* Editor outlines */
+#sigStage [data-cf-block] {
+  position: relative;
+  cursor: pointer;
+  transition: outline 0.08s linear;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+#sigStage [data-cf-block]:hover {
+  outline-color: rgba(77,208,196,0.5);
+}
+#sigStage [data-cf-block].selected {
+  outline-color: var(--accent);
+  outline-offset: 3px;
+}
+
+/* Block label that floats above selected element */
+.block-label {
+  position: absolute;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: 3px 8px;
+  border-radius: 4px 4px 0 0;
+  pointer-events: none;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+/* Empty state */
+.stage-empty {
+  color: var(--ink-3);
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 28px;
+  text-align: center;
+  padding: 80px 20px;
+}
+.stage-empty p { font-family: var(--sans); font-style: normal; font-size: 13px; color: var(--ink-2); margin-top: 12px; }
+
+/* ═════════ RIGHT PANEL — INSPECTOR ═════════ */
+.right {
+  background: var(--bg-1);
+  border-left: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.insp-head {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  flex-shrink: 0;
+}
+.insp-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ink-2);
+  margin-bottom: 3px;
+}
+.insp-title {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--ink-0);
+  letter-spacing: -0.01em;
+}
+
+.insp-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--line);
+  padding: 0 12px;
+  flex-shrink: 0;
+}
+.insp-tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--ink-2);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 9px 6px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.14s;
+  position: relative;
+}
+.insp-tab:hover { color: var(--ink-0); }
+.insp-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+.insp-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px;
+}
+
+.insp-section {
+  margin-bottom: 24px;
+}
+.insp-section-title {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-2);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.insp-section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.field { margin-bottom: 11px; }
+.field-row { display: flex; gap: 8px; }
+.field-row .field { flex: 1; margin-bottom: 0; }
+.field label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--ink-2);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.input,
+input[type=text],
+input[type=url],
+input[type=number],
+input[type=date],
+select,
+textarea {
+  width: 100%;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 7px 10px;
+  color: var(--ink-0);
+  font-family: var(--sans);
+  font-size: 12px;
+  outline: none;
+  transition: border-color 0.14s, background 0.14s;
+}
+.input:focus, input:focus, select:focus, textarea:focus {
+  border-color: var(--accent);
+  background: var(--bg-3);
+}
+textarea { resize: vertical; min-height: 70px; font-family: var(--sans); line-height: 1.5; }
+select {
+  appearance: none;
+  padding-right: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='none' stroke='%237a8199' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+}
+
+/* Color picker — custom-looking */
+.color-field {
+  display: flex;
+  gap: 6px;
+  align-items: stretch;
+}
+.color-swatch {
+  width: 34px;
+  border-radius: 5px;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.color-swatch input[type=color] {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0;
+}
+.color-text {
+  flex: 1;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  text-transform: uppercase;
+}
+
+/* Number with stepper */
+.num-stepper {
+  display: flex;
+  align-items: center;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.num-stepper input {
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 12px;
+  width: 100%;
+  padding: 7px 4px;
+}
+.num-stepper button {
+  background: transparent;
+  border: none;
+  color: var(--ink-2);
+  width: 22px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  padding: 6px 0;
+  transition: color 0.12s;
+}
+.num-stepper button:hover { color: var(--accent); }
+
+/* Toggle group (segmented) */
+.toggle-grp {
+  display: flex;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 2px;
+  gap: 2px;
+}
+.toggle-grp button {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--ink-2);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 5px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.toggle-grp button:hover { color: var(--ink-0); }
+.toggle-grp button.on { background: var(--accent); color: var(--accent-ink); }
+
+/* Checkbox row */
+.chk {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--ink-1);
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  transition: all 0.12s;
+  margin-bottom: 4px;
+}
+.chk:hover { border-color: var(--line-hi); }
+.chk input { display: none; }
+.chk .box {
+  width: 14px; height: 14px;
+  border-radius: 3px;
+  border: 1.5px solid var(--line-hi);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.14s;
+}
+.chk input:checked + .box {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.chk input:checked + .box::after {
+  content: '';
+  width: 4px; height: 8px;
+  border: solid var(--accent-ink);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) translateY(-1px);
+}
+.chk .lbl { flex: 1; font-size: 11.5px; }
+.chk .desc { font-size: 10px; color: var(--ink-2); margin-top: 1px; }
+
+/* Layout cards (in inspector) */
+.layout-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.layout-card {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 9px 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.14s var(--ease-out);
+}
+.layout-card:hover { border-color: var(--line-hi); }
+.layout-card.active {
+  border-color: var(--accent);
+  background: rgba(212,255,76,0.05);
+}
+.layout-card .ico {
+  height: 32px;
+  margin: 0 auto 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+.layout-card .ico div { background: currentColor; opacity: 0.5; border-radius: 1px; }
+.layout-card.active .ico div { opacity: 1; color: var(--accent); }
+.layout-card .lbl {
+  font-family: var(--mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-2);
+}
+.layout-card.active .lbl { color: var(--accent); }
+
+/* Color presets */
+.swatches {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.brand-sw {
+  width: 22px; height: 22px;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.12s;
+}
+.brand-sw:hover { transform: scale(1.1); }
+.brand-sw .x {
+  position: absolute;
+  top: -5px; right: -5px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--bg-3);
+  color: var(--ink-1);
+  font-size: 10px;
+  line-height: 11px;
+  text-align: center;
+  border: 1px solid var(--line);
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+.brand-sw:hover .x { opacity: 1; }
+.brand-sw-add {
+  width: 22px; height: 22px;
+  border-radius: 4px;
+  border: 1px dashed var(--line-hi);
+  background: transparent;
+  color: var(--ink-2);
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  transition: all 0.12s;
+}
+.brand-sw-add:hover { color: var(--accent); border-color: var(--accent); }
+
+/* Empty inspector state */
+.insp-empty {
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--ink-2);
+}
+.insp-empty .ic {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 48px;
+  color: var(--ink-3);
+  display: block;
+  margin-bottom: 12px;
+}
+.insp-empty p { font-size: 12px; line-height: 1.6; }
+
+/* Block-context inspector (when a block is selected) */
+.insp-block-header {
+  background: var(--bg-3);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 11px 13px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.insp-block-header .badge {
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.insp-block-header .nm { font-size: 12px; color: var(--ink-0); font-weight: 500; }
+.insp-block-header .x {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--ink-2);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+  line-height: 1;
+}
+.insp-block-header .x:hover { color: var(--ink-0); }
+
+/* ═════════ MODAL ═════════ */
+.modal-bg {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.2s var(--ease-out);
+}
+.modal-bg.show { display: flex; }
+.modal {
+  background: var(--bg-1);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  width: 90%; max-width: 720px;
+  max-height: 80vh;
+  overflow: auto;
+  padding: 28px;
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+.modal .eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.modal h2 {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 32px;
+  color: var(--ink-0);
+  margin-bottom: 4px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.modal p.sub { color: var(--ink-2); font-size: 13px; margin-bottom: 22px; max-width: 480px; }
+.modal-close {
+  position: absolute;
+  top: 16px; right: 16px;
+  background: transparent;
+  border: none;
+  color: var(--ink-2);
+  font-size: 18px;
+  cursor: pointer;
+  width: 28px; height: 28px;
+  border-radius: 5px;
+}
+.modal-close:hover { background: var(--bg-2); color: var(--ink-0); }
+
+.tmpl-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+.tmpl-card {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.18s var(--ease-out);
+  position: relative;
+}
+.tmpl-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  background: var(--bg-3);
+}
+.tmpl-prev {
+  height: 70px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  position: relative;
+}
+.tmpl-card .nm {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-0);
+  margin-bottom: 1px;
+}
+.tmpl-card .desc {
+  font-size: 10.5px;
+  color: var(--ink-2);
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 22px; left: 50%;
+  transform: translate(-50%, 20px);
+  background: var(--bg-3);
+  border: 1px solid var(--line-hi);
+  color: var(--ink-0);
+  padding: 10px 18px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0;
+  transition: all 0.24s var(--ease-out);
+  pointer-events: none;
+  z-index: 200;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+.toast .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+@keyframes slideUp { from {transform:translateY(8px);opacity:0;} to {transform:translateY(0);opacity:1;} }
+
+.fade-in { animation: slideUp 0.24s var(--ease-out); }
+
+/* Menu items / lang items lists */
+.repeat-item {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+.repeat-item input { flex: 1; }
+.repeat-item input:first-of-type { flex: 0 0 80px; }
+.repeat-item .del {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  color: var(--ink-2);
+  width: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.repeat-item .del:hover { background: var(--rose); color: white; border-color: var(--rose); }
+
+.add-item {
+  background: transparent;
+  border: 1px dashed var(--line-2);
+  color: var(--ink-2);
+  padding: 6px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.add-item:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Dropzone */
+.dropzone {
+  background: var(--bg-2);
+  border: 1.5px dashed var(--line-2);
+  border-radius: 7px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.14s var(--ease-out);
+}
+.dropzone:hover, .dropzone.drag { border-color: var(--accent); background: rgba(212,255,76,0.04); }
+.dropzone .lbl { font-size: 11px; color: var(--ink-1); margin-bottom: 4px; }
+.dropzone .sub { font-size: 10px; color: var(--ink-3); }
+.logo-prev {
+  max-width: 140px;
+  max-height: 50px;
+  margin: 10px auto 0;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Validation bar */
+.valbar {
+  margin-bottom: 18px;
+  padding: 11px 14px;
+  border-radius: 7px;
+  font-size: 11.5px;
+  border: 1px solid;
+}
+.valbar.ok { background: rgba(77,208,196,0.08); border-color: rgba(77,208,196,0.3); color: var(--teal); }
+.valbar.warn { background: rgba(255,181,71,0.08); border-color: rgba(255,181,71,0.3); color: var(--amber); }
+.valbar ul { margin: 6px 0 0 16px; }
+
+/* Social platform chips */
+.soc-chk {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 9px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+.soc-chk:hover { border-color: var(--line-hi); }
+.soc-chk input { display: none; }
+.soc-chk .badge2 {
+  width: 18px; height: 18px;
+  border-radius: 4px;
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+}
+.soc-chk .nm2 { flex: 1; font-size: 11.5px; color: var(--ink-1); }
+.soc-chk .pip {
+  width: 14px; height: 14px;
+  border-radius: 3px;
+  border: 1.5px solid var(--line-hi);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.soc-chk input:checked ~ .pip { background: var(--accent); border-color: var(--accent); }
+.soc-chk input:checked ~ .pip::after {
+  content: '';
+  width: 3px; height: 6px;
+  border: solid var(--accent-ink);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) translateY(-1px);
+}
+
+/* HTML code panel */
+.code-pane {
+  position: absolute;
+  inset: 0;
+  background: var(--bg-0);
+  z-index: 6;
+  padding: 80px 40px 40px;
+  display: none;
+  flex-direction: column;
+}
+.code-pane.show { display: flex; }
+.code-pane pre {
+  background: var(--bg-1);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--ink-1);
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow: auto;
+  flex: 1;
+}
 </style>
 </head>
 <body>
 
-<div class="hdr">
-  <div class="hdr-brand">
-    <div class="hdr-logo">Cloud<span>Force</span></div>
-    <div class="hdr-sep"></div>
-    <div class="hdr-title">Návrhář podpisů — Admin</div>
-  </div>
-  <div class="hdr-actions">
-    <label class="btn btn-ghost" style="cursor:pointer;">📂 Import<input type="file" accept=".json" id="importFile" style="display:none;" onchange="importSkins(this)"></label>
-    <button class="btn btn-primary" onclick="exportSkins()">💾 Export skins.json</button>
-  </div>
-</div>
+<div class="app">
 
-<div class="main">
-  <div class="left">
-    <div class="skin-list-wrap">
-      <div class="skin-list-header">
-        <div class="section-title">Skiny</div>
-        <button class="btn btn-sm btn-primary" onclick="openTemplates()">+ Nový</button>
+  <!-- ═══════════ HEADER ═══════════ -->
+  <div class="hdr">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      <span>CloudForce</span>
+      <span class="brand-sub">Studio</span>
+    </div>
+
+    <div class="hdr-tools">
+      <button class="tool-btn active" id="vw-desktop" onclick="setView('desktop')" title="Desktop náhled">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        Desktop
+      </button>
+      <button class="tool-btn" id="vw-mobile" onclick="setView('mobile')" title="Mobilní náhled">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        Mobil
+      </button>
+    </div>
+
+    <div class="hdr-tools">
+      <button class="tool-btn" id="th-light" onclick="setTheme('light')">Světlý</button>
+      <button class="tool-btn" id="th-dark" onclick="setTheme('dark')">🌙 Tmavý</button>
+    </div>
+
+    <select class="input" id="langSel" style="width:auto;font-size:11px;padding:5px 8px;" onchange="liveUpdate()">
+      <option value="cs">🇨🇿 CS</option>
+      <option value="en">🇬🇧 EN</option>
+      <option value="de">🇩🇪 DE</option>
+      <option value="sk">🇸🇰 SK</option>
+    </select>
+
+    <div class="hdr-spacer"></div>
+
+    <button class="btn btn-ghost" onclick="toggleCodePane()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      HTML
+    </button>
+    <label class="btn btn-ghost" style="cursor:pointer;">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      Import
+      <input type="file" id="importFile" accept=".json" style="display:none;" onchange="importSkins(this)">
+    </label>
+    <button class="btn btn-primary" onclick="exportSkins()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Export skins.json
+    </button>
+  </div>
+
+  <!-- ═══════════ MAIN ═══════════ -->
+  <div class="main">
+
+    <!-- LEFT — SKINS -->
+    <div class="left">
+      <div class="panel-head">
+        <h2>Skiny</h2>
+        <span class="ct" id="skinCount">0</span>
+      </div>
+      <div class="skin-search">
+        <input type="text" id="skinFilter" placeholder="Hledat skin…" oninput="renderSkinList()">
       </div>
       <div class="skin-list" id="skinList"></div>
+      <button class="add-skin" onclick="openTemplates()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Nový skin
+      </button>
     </div>
-    <div class="editor" id="editor"><div class="editor-placeholder">👈 Vyberte nebo vytvořte skin</div></div>
-    <div class="editor-actions" id="editorActions" style="display:none;">
-      <button class="btn btn-primary" onclick="saveSkin()">✓ Uložit skin</button>
-      <button class="btn btn-sm" style="background:var(--surface2);border:1px solid var(--border);" onclick="validateCurrent()">🔍 Kontrola</button>
-      <button class="btn btn-sm" style="background:var(--surface2);border:1px solid var(--border);" onclick="resetSkin()" title="Zahodit změny">↺</button>
-      <button class="btn btn-danger btn-sm" onclick="deleteSkin()">🗑</button>
+
+    <!-- STAGE -->
+    <div class="stage">
+      <div class="stage-toolbar">
+        <button class="toggle" onclick="alignStage('left')" title="Zarovnat vlevo">←</button>
+        <button class="toggle on" onclick="alignStage('center')" title="Zarovnat na střed">·</button>
+        <button class="toggle" onclick="alignStage('right')" title="Zarovnat vpravo">→</button>
+        <div class="div"></div>
+        <button class="toggle" id="hover-info" onclick="this.classList.toggle('on');document.getElementById('sigStage').classList.toggle('show-hover-info', this.classList.contains('on'));" title="Zobrazit popisky bloků">Popisky</button>
+      </div>
+
+      <div class="canvas-wrap" id="canvasWrap">
+        <div class="canvas-header">
+          <div>
+            <strong>Martin Maryška</strong><br>
+            <span style="font-size:10px;">martin@cloudforce.cz</span>
+          </div>
+          <div style="font-size:10px;">Komu: zakaznik@firma.cz</div>
+        </div>
+        <div class="canvas-body">
+          Dobrý den,<br>
+          děkuji za Vaši zprávu. Detaily najdete v příloze. V případě jakýchkoli dotazů jsem Vám k dispozici.<br>
+          S pozdravem,
+        </div>
+        <div id="sigStage"></div>
+      </div>
+
+      <!-- HTML code overlay -->
+      <div class="code-pane" id="codePane">
+        <pre id="codeOut">Vyberte skin…</pre>
+      </div>
+    </div>
+
+    <!-- RIGHT — INSPECTOR -->
+    <div class="right">
+      <div class="insp-head">
+        <div class="insp-eyebrow" id="inspEyebrow">Inspektor</div>
+        <div class="insp-title" id="inspTitle">Žádný výběr</div>
+      </div>
+      <div class="insp-tabs" id="inspTabs">
+        <button class="insp-tab active" data-tab="general">Skin</button>
+        <button class="insp-tab" data-tab="layout">Layout</button>
+        <button class="insp-tab" data-tab="advanced">Pokročilé</button>
+      </div>
+      <div class="insp-body" id="inspBody">
+        <div class="insp-empty">
+          <span class="ic">«</span>
+          <p>Vyberte skin v levém panelu nebo klikněte na prvek v náhledu.</p>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="right">
-    <div class="preview-tabs">
-      <div class="ptab active" onclick="showPane('preview')">👁 Náhled</div>
-      <div class="ptab" onclick="showPane('code')">{ } HTML kód</div>
-    </div>
-    <div class="right-content">
-      <div class="preview-pane active" id="panePreview">
-        <div id="valbar" class="valbar"></div>
-        <div class="testdata">
-          <span>Test:</span>
-          <input id="td-name" value="Martin Maryška" placeholder="Jméno" oninput="liveUpdate()">
-          <input id="td-title" value="Developer" placeholder="Pozice" oninput="liveUpdate()">
-          <input id="td-phone" value="+420 721 736 789" placeholder="Telefon" oninput="liveUpdate()">
-          <input id="td-email" value="martin@cloudforce.cz" placeholder="Email" oninput="liveUpdate()">
-          <input id="td-linkedin" value="martin-maryska" placeholder="LinkedIn user" oninput="liveUpdate()">
-          <label style="display:flex;align-items:center;gap:4px;font-size:11px;color:var(--muted);text-transform:none;letter-spacing:0;"><input type="checkbox" id="td-dark" onchange="liveUpdate()" style="width:auto;">🌙 dark</label>
-        </div>
-        <div class="preview-device">
-          <div style="font-size:13px;color:var(--text);line-height:1.6;margin-bottom:16px;color:#94a3b8;">Dobrý den,<br>děkuji za Vaši zprávu, ozvu se obratem.<br>S pozdravem,</div>
-          <div class="preview-sig-divider"></div>
-          <div id="previewOut"><em style="color:#999;font-size:12px;">Vyberte skin...</em></div>
-        </div>
-      </div>
-      <div class="code-pane" id="paneCode">
-        <div class="code-toolbar">
-          <span style="font-size:11px;color:var(--muted);">Vygenerovaný HTML podpisu</span>
-          <button class="btn btn-sm btn-primary" onclick="copyCode()">📋 Kopírovat</button>
-        </div>
-        <pre id="codeOut">// Vyberte skin...</pre>
-      </div>
-    </div>
-  </div>
 </div>
 
-<!-- TEMPLATE GALLERY MODAL -->
-<div class="modal-bg" id="tmplModal">
+<!-- Templates modal -->
+<div class="modal-bg" id="tmplModal" onclick="if(event.target===this)closeTemplates()">
   <div class="modal">
     <button class="modal-close" onclick="closeTemplates()">✕</button>
+    <div class="eyebrow">Galerie</div>
     <h2>Vyberte šablonu</h2>
-    <p>Začněte z hotové šablony a upravte ji podle sebe.</p>
+    <p class="sub">Vyberte výchozí styl, který nejvíc odpovídá vašemu záměru. Vždy ho můžete dále upravit.</p>
     <div class="tmpl-grid" id="tmplGrid"></div>
   </div>
 </div>
 
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast"><span class="dot"></span><span id="toastMsg"></span></div>
 
 <script src="lib-qrcode.js"></script>
 <script src="signature-renderer.js"></script>
-<script>
-let skins=[], currentId=null;
-const LAYOUTS=[{id:'two-column',icon:'⬛⬛',label:'Dva sloupce'},{id:'stacked',icon:'▬▬',label:'Jeden sloupec'},{id:'card',icon:'🎴',label:'Karta'}];
-const SOC=[['linkedin','in','#0A66C2'],['x','X','#000'],['facebook','f','#1877F2'],['instagram','IG','#E4405F'],['github','GH','#181717'],['youtube','YT','#FF0000']];
-
-function baseSkin(){return{id:'skin_'+Date.now(),name:'Nový skin',layout:'two-column',default:false,disclaimer:'',
-  styles:{primaryColor:'#23457a',accentColor:'#1fc09f',fontFamily:"'Segoe UI', Arial, Helvetica, sans-serif",nameSize:16,nameBold:true,nameUppercase:true,nameColor:'#23457a',titleSize:14,titleItalic:true,titleColor:'#000000',contactSize:14,contactColor:'#23457a',dividerColor:'#1fc09f',dividerWidth:58,separatorColor:'#bfc0c5',cardHeaderBg:'#23457a',cardHeaderTextColor:'#ffffff',cardBodyBg:'#f8fafc',darkBg:'',borderColor:'',photoSize:64,photoRound:true},
-  company:{logoUrl:'https://cloudforce.cz/wp-content/uploads/2026/05/logo-cloudforce.png',logoWidth:200,logoLink:'https://cloudforce.cz/',logoInvert:false,websiteUrl:'https://cloudforce.cz/',websiteLabel:'www.cloudforce.cz',phoneIconUrl:'https://cloudforce.cz/wp-content/uploads/2026/05/icon-phone.png',emailIconUrl:'https://cloudforce.cz/wp-content/uploads/2026/05/icon-email.png',webIconUrl:'https://cloudforce.cz/wp-content/uploads/2026/05/icon-web.png'},
-  blocks:{name:true,pronouns:true,title:true,department:true,divider:true,logo:true,phone:true,mobile:true,email:true,web:true,address:true,menu:true,photo:false,social:true,qr:false},
-  menu:{enabled:true,items:[{label:'M365',url:'https://cloudforce.cz/microsoft-365/'},{label:'LICENCE',url:'https://cloudforce.cz/produkt-kategorie/licence-office-365/'},{label:'APLIKACE',url:'https://cloudforce.cz/produkt-kategorie/aplikace/'},{label:'SLUŽBY',url:'https://cloudforce.cz/produkt-kategorie/sluzby/'}]},
-  social:{enabled:true,platforms:['linkedin','x','github']},
-  qr:{enabled:false},
-  banner:{enabled:false,imageUrl:'',link:'',alt:'',width:500,startDate:'',endDate:''},
-  darkVariant:{enabled:false,styles:{}},
-  translations:{}
-};}
-
-/* ---------- TEMPLATES ---------- */
-const TEMPLATES=[
-  {name:'CloudForce klasik',sub:'Dva sloupce, zelená čára',apply:s=>s},
-  {name:'Tmavý',sub:'Tmavé pozadí',apply:s=>{s.name='Tmavý';s.layout='stacked';Object.assign(s.styles,{nameColor:'#fff',darkBg:'#111827',accentColor:'#6366f1',titleColor:'#6366f1',contactColor:'#9ca3af',dividerColor:'#6366f1'});s.company.logoInvert=true;s.blocks.menu=false;s.blocks.photo=true;return s;}},
-  {name:'Minimalistický',sub:'Levý zelený okraj',apply:s=>{s.name='Minimalistický';s.layout='stacked';Object.assign(s.styles,{nameUppercase:false,nameColor:'#111827',titleColor:'#6b7280',contactColor:'#374151',borderColor:'#059669',accentColor:'#059669',dividerWidth:0});s.blocks.menu=false;s.blocks.social=false;return s;}},
-  {name:'Karta výrazná',sub:'Barevná hlavička',apply:s=>{s.name='Karta';s.layout='card';Object.assign(s.styles,{cardHeaderBg:'#be123c',cardHeaderTextColor:'#fff',accentColor:'#f59e0b',primaryColor:'#be123c'});s.blocks.menu=false;return s;}},
-  {name:'S fotem',sub:'Kulaté foto u jména',apply:s=>{s.name='S fotem';s.blocks.photo=true;return s;}},
-  {name:'S QR vizitkou',sub:'QR kód vCard',apply:s=>{s.name='S QR';s.blocks.qr=true;s.qr.enabled=true;return s;}}
-];
-function openTemplates(){
-  const g=document.getElementById('tmplGrid');
-  g.innerHTML=TEMPLATES.map((t,i)=>{const s=t.apply(baseSkin());const pc=s.styles.primaryColor,ac=s.styles.accentColor;
-    return `<div class="tmpl-card" onclick="useTemplate(${i})"><div class="tmpl-prev" style="background:${pc};"><div style="padding:8px 10px;"><div style="height:7px;width:60%;background:${ac};border-radius:2px;margin-bottom:5px;"></div><div style="height:4px;width:45%;background:rgba(255,255,255,.4);border-radius:1px;margin-bottom:3px;"></div><div style="height:4px;width:70%;background:rgba(255,255,255,.4);border-radius:1px;"></div></div></div><div class="tmpl-name">${t.name}</div><div class="tmpl-sub">${t.sub}</div></div>`;
-  }).join('');
-  document.getElementById('tmplModal').classList.add('show');
-}
-function closeTemplates(){document.getElementById('tmplModal').classList.remove('show');}
-function useTemplate(i){const s=TEMPLATES[i].apply(baseSkin());s.id='skin_'+Date.now();skins.push(s);saveState();closeTemplates();selectSkin(s.id);}
-
-/* ---------- PERSIST ---------- */
-function loadState(){
-  const saved=localStorage.getItem('cf_admin_skins');
-  if(saved){try{skins=JSON.parse(saved);currentId=skins[0]?.id||null;renderAll();return;}catch(e){}}
-  fetch('skins.json').then(r=>r.json()).then(d=>{skins=d;currentId=skins[0]?.id||null;saveState();renderAll();}).catch(()=>{skins=[baseSkin()];skins[0].name='CloudForce Original';currentId=skins[0].id;saveState();renderAll();});
-}
-function saveState(){localStorage.setItem('cf_admin_skins',JSON.stringify(skins));}
-
-/* ---------- LIST ---------- */
-function renderSkinList(){
-  const el=document.getElementById('skinList');
-  if(!skins.length){el.innerHTML='<div style="color:var(--muted);font-size:11px;padding:8px 0;">Žádné skiny.</div>';return;}
-  el.innerHTML=skins.map(s=>`<div class="skin-item${s.id===currentId?' active':''}" onclick="selectSkin('${s.id}')">
-    <div class="skin-item-dot" style="background:${s.styles?.accentColor||'#999'};"></div>
-    <div class="skin-item-name">${esc(s.name)}${s.default?' <span style="color:#f59e0b;" title="Výchozí">★</span>':''}</div>
-    <div class="skin-item-layout">${LAYOUTS.find(l=>l.id===s.layout)?.label||s.layout}</div>
-    <div class="skin-item-actions">
-      <button class="icon-btn" title="Nastavit jako výchozí" onclick="event.stopPropagation();setDefault('${s.id}')">${s.default?'★':'☆'}</button>
-      <button class="icon-btn" title="Exportovat skin" onclick="event.stopPropagation();exportOne('${s.id}')">⬇</button>
-      <button class="icon-btn" title="Duplikovat" onclick="event.stopPropagation();dupeSkin('${s.id}')">⧉</button>
-      <button class="icon-btn del" title="Smazat" onclick="event.stopPropagation();deleteSkinById('${s.id}')">✕</button>
-    </div></div>`).join('');
-}
-function selectSkin(id){currentId=id;renderAll();}
-function setDefault(id){skins.forEach(s=>s.default=(s.id===id));saveState();renderSkinList();showToast('★ Výchozí skin nastaven.');}
-function exportOne(id){const s=skins.find(x=>x.id===id);if(!s)return;const blob=new Blob([JSON.stringify([s],null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='skin-'+(s.name||'export').replace(/\s+/g,'-').toLowerCase()+'.json';a.click();showToast('⬇ Skin exportován.');}
-function resetSkin(){if(!currentId)return;if(!confirm('Zahodit neuložené změny tohoto skinu?'))return;renderEditor();updatePreview();showToast('↺ Změny zahozeny.');}
-
-/* brand color presets (stored in localStorage) */
-function getPresets(){try{return JSON.parse(localStorage.getItem('cf_brand_colors')||'[]');}catch(e){return[];}}
-function renderSwatches(){
-  const el=document.getElementById('brandSwatches');if(!el)return;
-  const presets=getPresets();
-  el.innerHTML=presets.map(c=>`<span title="${c} — klik kopíruje" onclick="copyHex('${c}')" style="width:22px;height:22px;border-radius:5px;background:${c};border:1px solid rgba(0,0,0,.15);cursor:pointer;display:inline-block;position:relative;"><span onclick="event.stopPropagation();removePreset('${c}')" style="position:absolute;top:-6px;right:-6px;background:#fff;border:1px solid var(--border);border-radius:50%;width:13px;height:13px;line-height:11px;text-align:center;font-size:9px;color:var(--danger);">×</span></span>`).join('')
-    +`<button class="btn btn-sm" style="background:var(--surface2);border:1px solid var(--border);" onclick="addPreset()">+ uložit aktuální</button>`;
-}
-function addPreset(){const p=getPresets();[g('f-primaryColor'),g('f-accentColor')].forEach(c=>{if(c&&!p.includes(c))p.push(c);});localStorage.setItem('cf_brand_colors',JSON.stringify(p.slice(0,12)));renderSwatches();showToast('🎨 Barva uložena do palety.');}
-function removePreset(c){localStorage.setItem('cf_brand_colors',JSON.stringify(getPresets().filter(x=>x!==c)));renderSwatches();}
-function copyHex(c){navigator.clipboard.writeText(c).then(()=>showToast('📋 '+c+' zkopírováno — vložte do barvy.'));}
-function dupeSkin(id){const src=skins.find(s=>s.id===id);if(!src)return;const c=JSON.parse(JSON.stringify(src));c.id='skin_'+Date.now();c.name=src.name+' (kopie)';skins.push(c);saveState();selectSkin(c.id);}
-function deleteSkinById(id){if(!confirm('Smazat tento skin?'))return;skins=skins.filter(s=>s.id!==id);if(currentId===id)currentId=skins[0]?.id||null;saveState();renderAll();}
-function deleteSkin(){if(currentId)deleteSkinById(currentId);}
-
-/* ---------- EDITOR ---------- */
-function renderEditor(){
-  const editor=document.getElementById('editor'),actions=document.getElementById('editorActions');
-  const skin=skins.find(s=>s.id===currentId);
-  if(!skin){editor.innerHTML='<div class="editor-placeholder">👈 Vyberte nebo vytvořte skin</div>';actions.style.display='none';return;}
-  actions.style.display='flex';
-  const st=skin.styles,co=skin.company,bl=skin.blocks;
-  editor.innerHTML=`
-  ${acc('📋 Základní','open',`
-    <div class="field"><label>Název skinu</label><input type="text" id="f-name" value="${esc(skin.name)}" oninput="liveUpdate()"></div>
-    <div class="field"><label>Rozvržení</label><div class="layout-btns">${LAYOUTS.map(l=>`<div class="layout-btn${skin.layout===l.id?' active':''}" onclick="setLayout('${l.id}',this)"><span class="layout-icon">${l.icon}</span>${l.label}</div>`).join('')}</div><input type="hidden" id="f-layout" value="${skin.layout}"></div>
-  `)}
-  ${acc('🎨 Barvy a písmo','',`
-    <div class="field"><label>Uložené barvy značky <span style="font-weight:400;">(klik = kopírovat hex)</span></label>
-      <div id="brandSwatches" style="display:flex;gap:5px;flex-wrap:wrap;align-items:center;"></div>
-    </div>
-    <div class="field-row"><div class="field"><label>Primární</label><input type="color" id="f-primaryColor" value="${st.primaryColor||'#23457a'}" oninput="liveUpdate()"></div><div class="field"><label>Akcent</label><input type="color" id="f-accentColor" value="${st.accentColor||'#1fc09f'}" oninput="liveUpdate()"></div></div>
-    <div class="field"><label>Písmo</label><select id="f-fontFamily" onchange="liveUpdate()">${["'Segoe UI', Arial, sans-serif","Arial, sans-serif","Georgia, serif","'Times New Roman', serif","'Courier New', monospace","Verdana, sans-serif","Tahoma, sans-serif"].map(f=>`<option value="${f}"${st.fontFamily===f?' selected':''}>${f.split(',')[0].replace(/'/g,'')}</option>`).join('')}</select></div>
-  `)}
-  ${acc('✍️ Styl jména','',`
-    <div class="field-row"><div class="field"><label>Velikost</label><input type="number" id="f-nameSize" value="${st.nameSize||16}" min="10" max="32" oninput="liveUpdate()"></div><div class="field"><label>Barva</label><input type="color" id="f-nameColor" value="${st.nameColor||'#23457a'}" oninput="liveUpdate()"></div></div>
-    <div class="checkbox-row"><input type="checkbox" id="f-nameBold" ${st.nameBold!==false?'checked':''} onchange="liveUpdate()"><label for="f-nameBold">Tučné</label></div>
-    <div class="checkbox-row"><input type="checkbox" id="f-nameUppercase" ${st.nameUppercase!==false?'checked':''} onchange="liveUpdate()"><label for="f-nameUppercase">VERZÁLKY</label></div>
-  `)}
-  ${acc('💼 Styl pozice','',`
-    <div class="field-row"><div class="field"><label>Velikost</label><input type="number" id="f-titleSize" value="${st.titleSize||14}" min="9" max="24" oninput="liveUpdate()"></div><div class="field"><label>Barva</label><input type="color" id="f-titleColor" value="${st.titleColor||'#000000'}" oninput="liveUpdate()"></div></div>
-    <div class="checkbox-row"><input type="checkbox" id="f-titleItalic" ${st.titleItalic!==false?'checked':''} onchange="liveUpdate()"><label for="f-titleItalic">Kurzíva</label></div>
-  `)}
-  ${acc('📞 Kontakt — styl','',`
-    <div class="field-row"><div class="field"><label>Velikost</label><input type="number" id="f-contactSize" value="${st.contactSize||14}" min="9" max="20" oninput="liveUpdate()"></div><div class="field"><label>Barva</label><input type="color" id="f-contactColor" value="${st.contactColor||'#23457a'}" oninput="liveUpdate()"></div></div>
-    <div class="field-row"><div class="field"><label>Čára barva</label><input type="color" id="f-dividerColor" value="${st.dividerColor||'#1fc09f'}" oninput="liveUpdate()"></div><div class="field"><label>Čára šířka</label><input type="number" id="f-dividerWidth" value="${st.dividerWidth||58}" min="0" max="300" oninput="liveUpdate()"></div></div>
-  `)}
-  ${acc('🏢 Logo a firma','',`
-    <div class="field"><label>URL loga</label><input type="url" id="f-logoUrl" value="${esc(co.logoUrl||'')}" placeholder="https://..." oninput="liveUpdate()"></div>
-    <div class="dropzone" id="logoDrop">🖼 Nahrát logo (drag & drop / klik)<img id="logoPrev" class="logo-preview"></div>
-    <input type="file" id="logoFile" accept="image/*" style="display:none;">
-    <div class="field-row" style="margin-top:9px;"><div class="field"><label>Šířka loga</label><input type="number" id="f-logoWidth" value="${co.logoWidth||200}" min="50" max="500" oninput="liveUpdate()"></div><div class="field"><label>Link loga</label><input type="url" id="f-logoLink" value="${esc(co.logoLink||'')}" oninput="liveUpdate()"></div></div>
-    <div class="checkbox-row"><input type="checkbox" id="f-logoInvert" ${co.logoInvert?'checked':''} onchange="liveUpdate()"><label for="f-logoInvert">Invertovat logo (tmavé pozadí)</label></div>
-    <div class="field"><label>URL webu</label><input type="url" id="f-websiteUrl" value="${esc(co.websiteUrl||'')}" oninput="liveUpdate()"></div>
-    <div class="field"><label>Text odkazu webu</label><input type="text" id="f-websiteLabel" value="${esc(co.websiteLabel||'')}" oninput="liveUpdate()"></div>
-    <div class="field"><label>Ikonka telefonu (URL / prázdné=emoji)</label><input type="url" id="f-phoneIconUrl" value="${esc(co.phoneIconUrl||'')}" oninput="liveUpdate()"></div>
-    <div class="field"><label>Ikonka emailu</label><input type="url" id="f-emailIconUrl" value="${esc(co.emailIconUrl||'')}" oninput="liveUpdate()"></div>
-    <div class="field"><label>Ikonka webu</label><input type="url" id="f-webIconUrl" value="${esc(co.webIconUrl||'')}" oninput="liveUpdate()"></div>
-  `)}
-  ${acc('🖼 Foto profilu','',`
-    <div class="field-row"><div class="field"><label>Velikost (px)</label><input type="number" id="f-photoSize" value="${st.photoSize||64}" min="32" max="120" oninput="liveUpdate()"></div></div>
-    <div class="checkbox-row"><input type="checkbox" id="f-photoRound" ${st.photoRound!==false?'checked':''} onchange="liveUpdate()"><label for="f-photoRound">Kulaté foto</label></div>
-    <div style="font-size:10px;color:var(--muted);">Samotné foto nahrává každý uživatel v pluginu.</div>
-  `)}
-  ${acc('🔗 Sociální sítě','',`
-    <div class="checkbox-row"><input type="checkbox" id="f-socialEnabled" ${skin.social?.enabled?'checked':''} onchange="liveUpdate()"><label for="f-socialEnabled">Povolit sociální sítě</label></div>
-    <div style="margin-top:6px;">${SOC.map(([id,l,c])=>`<label class="social-chk"><input type="checkbox" class="soc-plat" value="${id}" ${(skin.social?.platforms||[]).includes(id)?'checked':''} onchange="liveUpdate()" style="margin:0;"><span class="badge" style="background:${c};">${l}</span><span class="nm">${id}</span></label>`).join('')}</div>
-  `)}
-  ${acc('📇 QR vizitka','',`
-    <div class="checkbox-row"><input type="checkbox" id="f-qrEnabled" ${skin.qr?.enabled?'checked':''} onchange="liveUpdate()"><label for="f-qrEnabled">Zobrazit QR kód s vCard</label></div>
-    <div style="font-size:10px;color:var(--warn);background:#fffbeb;border:1px solid #fcd34d;border-radius:6px;padding:8px;">⚠️ QR se vkládá jako base64 obrázek. Klasický Outlook na Windows může base64 obrázky blokovat — otestujte před nasazením.</div>
-  `)}
-  ${acc('📢 Banner / kampaň','',`
-    <div class="checkbox-row"><input type="checkbox" id="f-bannerEnabled" ${skin.banner?.enabled?'checked':''} onchange="liveUpdate()"><label for="f-bannerEnabled">Zobrazit banner pod podpisem</label></div>
-    <div class="field"><label>URL obrázku banneru</label><input type="url" id="f-bannerImg" value="${esc(skin.banner?.imageUrl||'')}" placeholder="https://..." oninput="liveUpdate()"></div>
-    <div class="field"><label>Odkaz po kliknutí</label><input type="url" id="f-bannerLink" value="${esc(skin.banner?.link||'')}" oninput="liveUpdate()"></div>
-    <div class="field-row"><div class="field"><label>Šířka (px)</label><input type="number" id="f-bannerWidth" value="${skin.banner?.width||500}" min="100" max="700" oninput="liveUpdate()"></div><div class="field"><label>Alt text</label><input type="text" id="f-bannerAlt" value="${esc(skin.banner?.alt||'')}" oninput="liveUpdate()"></div></div>
-    <div class="field-row"><div class="field"><label>Platí od</label><input type="date" id="f-bannerStart" value="${esc(skin.banner?.startDate||'')}" oninput="liveUpdate()"></div><div class="field"><label>Platí do</label><input type="date" id="f-bannerEnd" value="${esc(skin.banner?.endDate||'')}" oninput="liveUpdate()"></div></div>
-  `)}
-  ${acc('🌍 Jazykové varianty','',`
-    <div style="font-size:10px;color:var(--muted);margin-bottom:8px;">Přeložte text odkazu webu a položky menu. Uživatel pak v pluginu přepne jazyk.</div>
-    <div id="langEditor"></div>
-  `)}
-  ${acc('🌙 Dark mode varianta','',`
-    <div class="checkbox-row"><input type="checkbox" id="f-darkEnabled" ${skin.darkVariant?.enabled?'checked':''} onchange="liveUpdate()"><label for="f-darkEnabled">Mít zvlášť variantu pro dark mode</label></div>
-    <div class="field-row"><div class="field"><label>Pozadí (dark)</label><input type="color" id="f-dark-darkBg" value="${skin.darkVariant?.styles?.darkBg||'#111827'}" oninput="liveUpdate()"></div><div class="field"><label>Barva jména (dark)</label><input type="color" id="f-dark-nameColor" value="${skin.darkVariant?.styles?.nameColor||'#ffffff'}" oninput="liveUpdate()"></div></div>
-    <div class="field-row"><div class="field"><label>Kontakt (dark)</label><input type="color" id="f-dark-contactColor" value="${skin.darkVariant?.styles?.contactColor||'#cbd5e1'}" oninput="liveUpdate()"></div><div class="field"><label>Akcent (dark)</label><input type="color" id="f-dark-accentColor" value="${skin.darkVariant?.styles?.accentColor||'#6366f1'}" oninput="liveUpdate()"></div></div>
-  `)}
-  ${acc('⚖️ Disclaimer / patička','',`
-    <div style="font-size:10px;color:var(--muted);margin-bottom:6px;">Právní/GDPR text pod podpisem. Přeložit lze v sekci Jazykové varianty.</div>
-    <textarea id="f-disclaimer" oninput="liveUpdate()" rows="4" style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:6px;font-family:inherit;font-size:11px;padding:6px 8px;outline:none;resize:vertical;" placeholder="Tento e-mail může obsahovat důvěrné informace...">${esc(skin.disclaimer||'')}</textarea>
-  `)}
-  ${acc('🧩 Zobrazené prvky','',
-    [['name','Jméno'],['pronouns','Zájmena'],['title','Pozice'],['department','Oddělení'],['divider','Čára'],['logo','Logo'],['phone','Telefon'],['mobile','Mobil'],['email','Email'],['web','Web'],['address','Adresa'],['menu','Menu'],['photo','Foto'],['social','Sociální sítě'],['qr','QR kód']].map(([k,l])=>`<div class="checkbox-row"><input type="checkbox" id="f-bl-${k}" ${bl[k]!==false?'checked':''} onchange="liveUpdate()"><label for="f-bl-${k}">${l}</label></div>`).join('')
-  )}
-  ${acc('🔗 Navigační menu','',`
-    <div class="checkbox-row"><input type="checkbox" id="f-menuEnabled" ${skin.menu?.enabled?'checked':''} onchange="liveUpdate()"><label for="f-menuEnabled">Zobrazit menu</label></div>
-    <div id="menuItemsList" style="margin-top:8px;"></div>
-    <button class="btn btn-sm" style="background:var(--surface2);border:1px solid var(--border);margin-top:6px;" onclick="addMenuItem()">+ Přidat položku</button>
-  `)}
-  `;
-  renderMenuItems(skin.menu?.items||[]);
-  renderLangEditor(skin);
-  initLogoDrop();
-  renderSwatches();
-  showLayoutSpecific(skin.layout);
-}
-function acc(title,open,body){return `<div class="accordion"><div class="acc-header ${open}" onclick="toggleAcc(this)"><span class="acc-title">${title}</span><span class="acc-arrow">▼</span></div><div class="acc-body ${open}">${body}</div></div>`;}
-
-function renderMenuItems(items){const el=document.getElementById('menuItemsList');if(!el)return;el.innerHTML=items.map((it,i)=>`<div class="menu-item"><input type="text" placeholder="Label" value="${esc(it.label)}" oninput="liveUpdate()" data-mi="${i}" data-field="label"><input type="url" placeholder="URL" value="${esc(it.url)}" oninput="liveUpdate()" data-mi="${i}" data-field="url"><button class="icon-btn del" onclick="removeMenuItem(${i})">✕</button></div>`).join('');}
-function addMenuItem(){const s=skins.find(x=>x.id===currentId);if(!s)return;if(!s.menu)s.menu={enabled:true,items:[]};s.menu.items.push({label:'NOVÁ',url:'https://'});saveState();renderMenuItems(s.menu.items);liveUpdate();}
-function removeMenuItem(i){const s=skins.find(x=>x.id===currentId);if(!s?.menu?.items)return;s.menu.items.splice(i,1);saveState();renderMenuItems(s.menu.items);liveUpdate();}
-
-function renderLangEditor(skin){
-  const el=document.getElementById('langEditor');if(!el)return;
-  const langs=['en','de','sk'];
-  el.innerHTML=langs.map(lng=>{const t=skin.translations?.[lng]||{};
-    return `<div style="border:1px solid var(--border);border-radius:6px;padding:8px;margin-bottom:6px;"><div style="font-size:11px;font-weight:700;margin-bottom:5px;">${lng.toUpperCase()}</div>
-      <div class="field"><label>Text odkazu webu</label><input type="text" data-lng="${lng}" data-lfield="websiteLabel" value="${esc(t.websiteLabel||'')}" oninput="liveUpdate()"></div>
-      <div class="field"><label>Menu (oddělené čárkou)</label><input type="text" data-lng="${lng}" data-lfield="menu" value="${esc((t.menu||[]).join(', '))}" oninput="liveUpdate()" placeholder="M365, LICENSES, ..."></div>
-      <div class="field"><label>Disclaimer</label><input type="text" data-lng="${lng}" data-lfield="disclaimer" value="${esc(t.disclaimer||'')}" oninput="liveUpdate()" placeholder="This e-mail may contain..."></div>
-    </div>`;}).join('');
-}
-
-/* ---------- LOGO DROP ---------- */
-function initLogoDrop(){
-  const drop=document.getElementById('logoDrop'),input=document.getElementById('logoFile');if(!drop)return;
-  const prev=document.getElementById('logoPrev');
-  const cur=document.getElementById('f-logoUrl').value;
-  if(cur){prev.src=cur;prev.style.display='block';}
-  drop.onclick=()=>input.click();
-  input.onchange=e=>{if(e.target.files[0])readLogo(e.target.files[0]);};
-  ['dragover','dragenter'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('drag');}));
-  ['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('drag');}));
-  drop.addEventListener('drop',e=>{if(e.dataTransfer.files[0])readLogo(e.dataTransfer.files[0]);});
-}
-function readLogo(file){const r=new FileReader();r.onload=e=>{document.getElementById('f-logoUrl').value=e.target.result;const p=document.getElementById('logoPrev');p.src=e.target.result;p.style.display='block';liveUpdate();showToast('🖼 Logo nahráno (base64). Pro produkci doporučuji nahrát na hosting a vložit URL.');};r.readAsDataURL(file);}
-
-/* ---------- FORM → SKIN ---------- */
-function g(id){const el=document.getElementById(id);return el?el.value:'';}
-function gc(id){const el=document.getElementById(id);return el?el.checked:false;}
-function getFormSkin(){
-  const skin=skins.find(s=>s.id===currentId);if(!skin)return null;
-  const menuItems=[];document.querySelectorAll('[data-mi]').forEach(el=>{const i=+el.dataset.mi;if(!menuItems[i])menuItems[i]={label:'',url:''};menuItems[i][el.dataset.field]=el.value;});
-  const plats=[];document.querySelectorAll('.soc-plat:checked').forEach(el=>plats.push(el.value));
-  const translations={};document.querySelectorAll('[data-lng]').forEach(el=>{const l=el.dataset.lng,f=el.dataset.lfield;if(!translations[l])translations[l]={};if(f==='menu')translations[l].menu=el.value.split(',').map(x=>x.trim()).filter(Boolean);else if(el.value.trim())translations[l][f]=el.value.trim();});
-  const dtext=document.getElementById('f-disclaimer');
-  return {...skin,name:g('f-name')||skin.name,layout:g('f-layout')||skin.layout,default:!!skin.default,disclaimer:dtext?dtext.value:'',
-    styles:{primaryColor:g('f-primaryColor'),accentColor:g('f-accentColor'),fontFamily:g('f-fontFamily'),nameSize:+g('f-nameSize')||16,nameBold:gc('f-nameBold'),nameUppercase:gc('f-nameUppercase'),nameColor:g('f-nameColor'),titleSize:+g('f-titleSize')||14,titleItalic:gc('f-titleItalic'),titleColor:g('f-titleColor'),contactSize:+g('f-contactSize')||14,contactColor:g('f-contactColor'),dividerColor:g('f-dividerColor'),dividerWidth:+g('f-dividerWidth')||0,separatorColor:skin.styles?.separatorColor||'#bfc0c5',cardHeaderBg:skin.styles?.cardHeaderBg||g('f-primaryColor'),cardHeaderTextColor:skin.styles?.cardHeaderTextColor||'#ffffff',cardBodyBg:skin.styles?.cardBodyBg||'#f8fafc',borderColor:skin.styles?.borderColor||'',darkBg:skin.styles?.darkBg||'',photoSize:+g('f-photoSize')||64,photoRound:gc('f-photoRound')},
-    company:{logoUrl:g('f-logoUrl'),logoWidth:+g('f-logoWidth')||200,logoLink:g('f-logoLink'),logoInvert:gc('f-logoInvert'),websiteUrl:g('f-websiteUrl'),websiteLabel:g('f-websiteLabel'),phoneIconUrl:g('f-phoneIconUrl'),emailIconUrl:g('f-emailIconUrl'),webIconUrl:g('f-webIconUrl')},
-    blocks:{name:gc('f-bl-name'),pronouns:gc('f-bl-pronouns'),title:gc('f-bl-title'),department:gc('f-bl-department'),divider:gc('f-bl-divider'),logo:gc('f-bl-logo'),phone:gc('f-bl-phone'),mobile:gc('f-bl-mobile'),email:gc('f-bl-email'),web:gc('f-bl-web'),address:gc('f-bl-address'),menu:gc('f-bl-menu'),photo:gc('f-bl-photo'),social:gc('f-bl-social'),qr:gc('f-bl-qr')},
-    menu:{enabled:gc('f-menuEnabled'),items:menuItems.filter(Boolean)},
-    social:{enabled:gc('f-socialEnabled'),platforms:plats},
-    qr:{enabled:gc('f-qrEnabled')},
-    banner:{enabled:gc('f-bannerEnabled'),imageUrl:g('f-bannerImg'),link:g('f-bannerLink'),alt:g('f-bannerAlt'),width:+g('f-bannerWidth')||500,startDate:g('f-bannerStart'),endDate:g('f-bannerEnd')},
-    darkVariant:{enabled:gc('f-darkEnabled'),styles:{darkBg:g('f-dark-darkBg'),nameColor:g('f-dark-nameColor'),contactColor:g('f-dark-contactColor'),accentColor:g('f-dark-accentColor'),titleColor:g('f-dark-accentColor')}},
-    translations
-  };
-}
-
-/* ---------- LIVE ---------- */
-function liveUpdate(){const s=getFormSkin();if(!s)return;const nameEl=document.querySelector(`.skin-item.active .skin-item-name`);if(nameEl)nameEl.textContent=s.name;showLayoutSpecific(s.layout);renderPreview(s);}
-function setLayout(id,btn){document.querySelectorAll('.layout-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.getElementById('f-layout').value=id;liveUpdate();}
-function showLayoutSpecific(){/* reserved */}
-
-/* ---------- PREVIEW ---------- */
-function getTestUser(){return{name:g('td-name')||'Jan Novák',title:g('td-title'),department:'IT',pronouns:'on/jeho',phone:g('td-phone'),mobile:'+420 777 111 222',email:g('td-email'),address:'Praha 1, Nové Město',social:{linkedin:g('td-linkedin'),x:g('td-linkedin'),github:g('td-linkedin')},photo:'https://i.pravatar.cc/120?img=12',lang:'cs'};}
-function renderPreview(skin){const out=document.getElementById('previewOut'),code=document.getElementById('codeOut');if(!skin){out.innerHTML='<em style="color:#999;">Vyberte skin...</em>';return;}const html=renderSignatureHTML(skin,getTestUser(),{dark:gc('td-dark')});out.innerHTML=html;code.textContent=html.trim();}
-function updatePreview(){renderPreview(skins.find(s=>s.id===currentId));}
-
-/* ---------- VALIDATION ---------- */
-function validateCurrent(){
-  const s=getFormSkin();if(!s)return;
-  const issues=[];
-  if(!s.name||s.name==='Nový skin')issues.push('Skin nemá vlastní název.');
-  if(s.blocks.logo!==false&&!s.company.logoUrl)issues.push('Logo je zapnuté, ale chybí URL loga.');
-  [['logoUrl','URL loga'],['websiteUrl','URL webu'],['logoLink','Link loga']].forEach(([k,n])=>{const val=s.company[k];if(val&&!/^https?:\/\//i.test(val)&&!/^data:/i.test(val))issues.push(`${n} není platná URL (chybí https://).`);});
-  if(s.banner.enabled&&!s.banner.imageUrl)issues.push('Banner je zapnutý, ale chybí obrázek.');
-  if(s.banner.startDate&&s.banner.endDate&&s.banner.startDate>s.banner.endDate)issues.push('Banner: „Platí od" je po „Platí do".');
-  if(s.social.enabled&&!s.social.platforms.length)issues.push('Sociální sítě jsou zapnuté, ale není vybrána žádná.');
-  if(s.qr.enabled)issues.push('QR kód: ověřte zobrazení v klasickém Outlooku (base64 obrázky).');
-  if((s.company.logoWidth||0)>600)issues.push('Logo je širší než 600px — na mobilu se může ořezat.');
-  if(s.banner.enabled&&(s.banner.width||0)>600)issues.push('Banner je širší než 600px — na mobilu se může ořezat.');
-  // contrast check (simple)
-  if(s.styles.darkBg&&isLight(s.styles.darkBg)&&isLight(s.styles.nameColor))issues.push('Nízký kontrast: světlé jméno na světlém pozadí.');
-  const bar=document.getElementById('valbar');
-  if(!issues.length){bar.className='valbar ok';bar.innerHTML='✓ Skin je v pořádku, žádné problémy.';}
-  else{bar.className='valbar warn';bar.innerHTML='⚠️ Nalezeno '+issues.length+' upozornění:<ul>'+issues.map(i=>`<li>${i}</li>`).join('')+'</ul>';}
-  showPane('preview');
-}
-function isLight(hex){if(!hex||hex[0]!=='#')return false;const r=parseInt(hex.substr(1,2),16),g_=parseInt(hex.substr(3,2),16),b=parseInt(hex.substr(5,2),16);return (0.299*r+0.587*g_+0.114*b)>160;}
-
-/* ---------- SAVE / EXPORT / IMPORT ---------- */
-function saveSkin(){const s=getFormSkin();if(!s)return;const i=skins.findIndex(x=>x.id===currentId);if(i>=0)skins[i]=s;saveState();renderSkinList();showToast('✓ Skin uložen!');}
-function exportSkins(){const s=getFormSkin();if(s){const i=skins.findIndex(x=>x.id===currentId);if(i>=0)skins[i]=s;saveState();}const blob=new Blob([JSON.stringify(skins,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='skins.json';a.click();showToast('✓ skins.json stažen! Nahrajte ho na hosting.');}
-function importSkins(input){const f=input.files[0];if(!f)return;const r=new FileReader();r.onload=e=>{try{const d=JSON.parse(e.target.result);if(!Array.isArray(d))throw 0;skins=d;saveState();currentId=skins[0]?.id||null;renderAll();showToast('✓ Načteno skinů: '+skins.length);}catch(err){alert('Chybný formát.');}};r.readAsText(f);input.value='';}
-
-/* ---------- UTILS ---------- */
-function toggleAcc(h){h.classList.toggle('open');h.nextElementSibling.classList.toggle('open');}
-function showPane(name){document.querySelectorAll('.ptab').forEach((t,i)=>t.classList.toggle('active',['preview','code'][i]===name));document.getElementById('panePreview').classList.toggle('active',name==='preview');document.getElementById('paneCode').classList.toggle('active',name==='code');}
-function copyCode(){navigator.clipboard.writeText(document.getElementById('codeOut').textContent).then(()=>showToast('📋 Zkopírováno!'));}
-function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800);}
-function esc(s){return(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');}
-function renderAll(){renderSkinList();renderEditor();updatePreview();}
-
-loadState();
-</script>
+<script src="admin.js"></script>
 </body>
 </html>
