@@ -241,21 +241,34 @@ function buildHtmlFor(short){
 
 function insertSignature(){
   const item=Office.context.mailbox.item;
-  // detect reply/forward → offer short signature
   const doInsert=(useShort)=>{
     const html=buildHtmlFor(useShort); if(!html)return;
-    item.body.getAsync(Office.CoercionType.Html,res=>{
-      if(res.status!==Office.AsyncResultStatus.Succeeded)return;
-      let body=res.value;
-      const marker=(window.CF_SIG_MARKER||'cf-signature-block');
-      if(body.indexOf(marker)>-1){
-        if(!confirm('V e-mailu už podpis je. Nahradit ho?'))return;
-        body=stripExistingSig(body);
-      }
-      item.body.setAsync(body+'<br/>'+html,{coercionType:Office.CoercionType.Html},sr=>{
-        if(sr.status===Office.AsyncResultStatus.Succeeded){const t=document.getElementById('toast');t.textContent='✓ Podpis byl vložen!';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}
+    const showSuccess=()=>{
+      const t=document.getElementById('toast');
+      t.textContent='✓ Podpis byl vložen!';
+      t.classList.add('show');
+      setTimeout(()=>t.classList.remove('show'),3000);
+    };
+    // setSignatureAsync nahradí jakýkoli existující podpis (vč. výchozího Outlook).
+    // Vyžaduje Mailbox 1.10+. Fallback na starý append pro starší verze.
+    if(typeof item.body.setSignatureAsync === 'function'){
+      item.body.setSignatureAsync(html,{coercionType:Office.CoercionType.Html},sr=>{
+        if(sr.status===Office.AsyncResultStatus.Succeeded) showSuccess();
       });
-    });
+    } else {
+      item.body.getAsync(Office.CoercionType.Html,res=>{
+        if(res.status!==Office.AsyncResultStatus.Succeeded)return;
+        let body=res.value;
+        const marker=(window.CF_SIG_MARKER||'cf-signature-block');
+        if(body.indexOf(marker)>-1){
+          if(!confirm('V e-mailu už podpis je. Nahradit ho?'))return;
+          body=stripExistingSig(body);
+        }
+        item.body.setAsync(body+'<br/>'+html,{coercionType:Office.CoercionType.Html},sr=>{
+          if(sr.status===Office.AsyncResultStatus.Succeeded) showSuccess();
+        });
+      });
+    }
   };
   if(item.getComposeTypeAsync){
     item.getComposeTypeAsync(r=>{
