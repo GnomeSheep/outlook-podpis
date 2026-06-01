@@ -31,9 +31,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/0a2540/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 200,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -118,9 +118,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/002868/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 240,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -205,9 +205,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/1f2937/ffffff?text=LOGO",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
       "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -292,9 +292,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/1e3a8a/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 190,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -379,9 +379,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/374151/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 200,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -466,10 +466,10 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/0d0f14/ffffff?text=LOGO",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
       "logoWidth": 180,
-      "logoLink": "https://example.com/",
-      "logoInvert": true,
+      "logoLink": "https://cloudforce.cz/",
+      "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
       "phoneIconUrl": "",
@@ -555,9 +555,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/1e1b4b/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 170,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -642,10 +642,10 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/0d1117/ffffff?text=LOGO",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
       "logoWidth": 180,
-      "logoLink": "https://example.com/",
-      "logoInvert": true,
+      "logoLink": "https://cloudforce.cz/",
+      "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
       "phoneIconUrl": "",
@@ -731,9 +731,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/2563eb/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 200,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -818,10 +818,10 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/111827/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
-      "logoInvert": true,
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 220,
+      "logoLink": "https://cloudforce.cz/",
+      "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
       "phoneIconUrl": "",
@@ -905,9 +905,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/f97316/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 170,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -992,9 +992,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/6b1d3c/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 240,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -1079,9 +1079,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/1a1a2e/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 190,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -1166,9 +1166,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/8b0000/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 200,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -1253,9 +1253,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/1b3a2f/ffffff?text=LOGO",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
       "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -1340,9 +1340,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/ff6b35/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 220,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -1427,9 +1427,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/f72585/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 170,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -1514,9 +1514,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/000000/ffffff?text=LOGO",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
       "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -1601,9 +1601,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/ffd60a/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 190,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -1688,9 +1688,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/ff6b6b/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 200,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -1775,9 +1775,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/0d9488/ffffff?text=LOGO",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
       "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -1862,9 +1862,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/5e8b7e/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 200,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -1949,9 +1949,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/0284c7/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 170,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -2036,9 +2036,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/059669/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 190,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -2123,9 +2123,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/7b1d3c/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 240,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -2210,9 +2210,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/4a3c2e/ffffff?text=LOGO",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
       "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -2297,9 +2297,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/3730a3/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 200,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -2384,9 +2384,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/1a1a1a/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 240,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -2471,9 +2471,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/06506f/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 170,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -2558,9 +2558,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/2c3e50/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 200,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -2645,9 +2645,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/6f1d1b/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 240,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -2732,9 +2732,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/774936/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 170,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -2819,9 +2819,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/5e1a1a/ffffff?text=LOGO",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
       "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -2906,9 +2906,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/0d0d0d/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 220,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -2993,9 +2993,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/f4978e/ffffff?text=LOGO",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
       "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -3080,9 +3080,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/5e503f/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 190,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -3167,9 +3167,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/000000/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 240,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -3254,9 +3254,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/ff006e/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 170,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -3341,9 +3341,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/ff5400/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 200,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -3428,9 +3428,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/240046/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 220,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -3515,9 +3515,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/5e8b7e/ffffff?text=LOGO",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
       "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -3602,9 +3602,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/3c2415/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 200,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -3689,9 +3689,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/4a306d/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 170,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -3776,9 +3776,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/1d3320/ffffff?text=LOGO",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
       "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -3863,9 +3863,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/5f4b32/ffffff?text=LOGO",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
       "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -3950,9 +3950,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/0d3b66/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 200,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -4037,9 +4037,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/f4b942/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 170,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -4124,9 +4124,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/c1121f/ffffff?text=LOGO",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
       "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -4211,9 +4211,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/283d3b/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 200,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -4298,9 +4298,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/006ba6/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 220,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -4385,9 +4385,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/3a86ff/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 170,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -4472,9 +4472,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/000000/ffffff?text=LOGO",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
       "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -4559,9 +4559,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/2b2d42/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 200,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
@@ -4646,9 +4646,9 @@
       "photoRound": true
     },
     "company": {
-      "logoUrl": "https://via.placeholder.com/200x60/3a0ca3/ffffff?text=LOGO",
-      "logoWidth": 180,
-      "logoLink": "https://example.com/",
+      "logoUrl": "https://gnomesheep.github.io/outlook-podpis/logo.png",
+      "logoWidth": 190,
+      "logoLink": "https://cloudforce.cz/",
       "logoInvert": false,
       "websiteUrl": "https://example.com/",
       "websiteLabel": "www.example.com",
