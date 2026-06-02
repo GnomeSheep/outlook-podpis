@@ -66,9 +66,184 @@ input::placeholder{color:#bcc4d0;}
 .social-field{position:relative;}
 .social-field .prefix{position:absolute;left:8px;top:50%;transform:translateY(-50%);width:18px;height:18px;line-height:18px;text-align:center;border-radius:4px;color:#fff;font-size:9px;font-weight:700;}
 .social-field input{padding-left:32px;}
+
+/* ───────── ONBOARDING ───────── */
+.onboard-bg{position:fixed;inset:0;background:rgba(15,29,58,.55);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:1000;animation:onbFade .25s ease;}
+.onboard-bg.show{display:flex;}
+@keyframes onbFade{from{opacity:0}to{opacity:1}}
+@keyframes onbSlide{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.onboard{background:var(--surface);border-radius:12px;width:calc(100% - 20px);max-width:340px;max-height:calc(100vh - 24px);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 60px rgba(15,29,58,.35);}
+.onb-hd{background:linear-gradient(135deg,#23457a 0%,#1fc09f 110%);color:#fff;padding:18px 18px 14px;position:relative;}
+.onb-skip{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.18);border:none;color:#fff;font-size:10px;font-weight:500;cursor:pointer;padding:4px 8px;border-radius:5px;letter-spacing:.04em;}
+.onb-skip:hover{background:rgba(255,255,255,.28);}
+.onb-eyebrow{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-bottom:3px;}
+.onb-title{font-size:18px;font-weight:700;letter-spacing:-.01em;line-height:1.25;}
+.onb-sub{font-size:11.5px;opacity:.85;margin-top:5px;line-height:1.45;}
+.onb-dots{display:flex;gap:5px;margin-top:14px;}
+.onb-dot{height:3px;flex:1;background:rgba(255,255,255,.25);border-radius:2px;transition:background .25s ease;}
+.onb-dot.done{background:rgba(255,255,255,.55);}
+.onb-dot.cur{background:#fff;}
+.onb-body{padding:18px 18px 4px;overflow-y:auto;flex:1;animation:onbSlide .3s ease;}
+.onb-step{display:none;}
+.onb-step.cur{display:block;}
+.onb-illu{width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,rgba(35,69,122,.1),rgba(31,192,159,.15));display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:30px;}
+.onb-step h3{font-size:15px;font-weight:700;color:var(--text);text-align:center;margin-bottom:6px;}
+.onb-step p{font-size:11.5px;color:var(--muted);text-align:center;line-height:1.5;margin-bottom:14px;}
+.onb-field{margin-bottom:9px;}
+.onb-field label{font-size:9.5px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px;display:block;}
+.onb-field input{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:8px 10px;font-size:12.5px;font-family:inherit;color:var(--text);outline:none;transition:border-color .15s;}
+.onb-field input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(35,69,122,.1);}
+.onb-magic{width:100%;background:linear-gradient(135deg,#23457a,#1fc09f);color:#fff;border:none;border-radius:8px;padding:10px;font-size:12px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:10px;transition:transform .15s,filter .15s;}
+.onb-magic:hover{transform:translateY(-1px);filter:brightness(1.05);}
+.onb-divider{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:10px;color:var(--muted);}
+.onb-divider::before,.onb-divider::after{content:'';flex:1;height:1px;background:var(--border);}
+.onb-photo-row{display:flex;align-items:center;gap:12px;background:var(--surface2);border:1px dashed var(--border);border-radius:10px;padding:14px;cursor:pointer;transition:all .15s;}
+.onb-photo-row:hover,.onb-photo-row.drag{border-color:var(--accent);background:rgba(35,69,122,.04);}
+.onb-photo-prev{width:54px;height:54px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#dbe5f0,#c4d7e8);display:flex;align-items:center;justify-content:center;font-size:22px;color:#7a8eb2;border:2px solid var(--border);object-fit:cover;}
+.onb-photo-meta{flex:1;}
+.onb-photo-meta .t{font-size:12px;font-weight:600;color:var(--text);}
+.onb-photo-meta .s{font-size:10.5px;color:var(--muted);margin-top:1px;}
+.onb-skip-tiny{font-size:10.5px;color:var(--muted);text-align:center;padding:8px;cursor:pointer;text-decoration:underline;}
+.onb-skip-tiny:hover{color:var(--accent);}
+.onb-skins{max-height:240px;overflow-y:auto;margin:0 -2px;padding:0 2px;}
+.onb-skin-card{border:2px solid var(--border);border-radius:8px;padding:8px;cursor:pointer;transition:all .15s;background:var(--surface);margin-bottom:6px;display:flex;gap:9px;align-items:center;position:relative;}
+.onb-skin-card:hover{border-color:var(--accent);}
+.onb-skin-card.selected{border-color:var(--green);background:rgba(31,192,159,.04);box-shadow:0 0 0 3px rgba(31,192,159,.12);}
+.onb-skin-swatch{width:38px;height:38px;border-radius:6px;flex-shrink:0;position:relative;overflow:hidden;}
+.onb-skin-meta{flex:1;min-width:0;}
+.onb-skin-meta .n{font-size:12px;font-weight:600;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.onb-skin-meta .c{font-size:9.5px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:1px;}
+.onb-skin-check{width:18px;height:18px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;transition:all .15s;flex-shrink:0;}
+.onb-skin-card.selected .onb-skin-check{background:var(--green);}
+.onb-finish{text-align:center;padding:8px 0 12px;}
+.onb-checkmark{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#1fc09f,#16a085);color:#fff;font-size:28px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;box-shadow:0 8px 24px rgba(31,192,159,.35);animation:pop .4s cubic-bezier(.2,1.5,.4,1);}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+.onb-finish h3{font-size:17px;}
+.onb-finish p{font-size:12px;}
+.onb-tip-list{background:var(--surface2);border-radius:8px;padding:12px;text-align:left;margin:14px 0 4px;}
+.onb-tip{display:flex;gap:9px;align-items:flex-start;font-size:11px;color:var(--text);line-height:1.5;}
+.onb-tip + .onb-tip{margin-top:9px;}
+.onb-tip-ico{flex-shrink:0;width:18px;height:18px;border-radius:5px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;}
+.onb-tip strong{color:var(--text);font-weight:600;}
+.onb-ft{padding:14px 18px 16px;border-top:1px solid var(--border);background:var(--surface2);display:flex;gap:8px;align-items:center;}
+.onb-back{background:transparent;border:none;color:var(--muted);font-size:11.5px;font-weight:500;cursor:pointer;padding:6px 10px;border-radius:5px;}
+.onb-back:hover{color:var(--text);background:var(--surface);}
+.onb-back:disabled{opacity:0;pointer-events:none;}
+.onb-spacer{flex:1;}
+.onb-next{background:var(--accent);color:#fff;border:none;border-radius:7px;padding:9px 18px;font-size:12px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:transform .15s,background .15s;}
+.onb-next:hover{background:#1a3460;transform:translateY(-1px);}
+.onb-next.done{background:linear-gradient(135deg,#1fc09f,#16a085);}
+.onb-next.done:hover{filter:brightness(1.05);}
+.onb-trigger{position:fixed;bottom:14px;right:14px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:14px;cursor:pointer;box-shadow:0 4px 12px rgba(35,69,122,.3);display:none;align-items:center;justify-content:center;z-index:50;transition:transform .15s,background .15s;}
+.onb-trigger:hover{background:#1a3460;transform:scale(1.08);}
+.onb-trigger.visible{display:flex;}
 </style>
 </head>
 <body>
+
+<!-- ═══════════ ONBOARDING WIZARD ═══════════ -->
+<div class="onboard-bg" id="onbBg">
+  <div class="onboard">
+    <div class="onb-hd">
+      <button class="onb-skip" onclick="closeOnboarding()">Přeskočit</button>
+      <div class="onb-eyebrow" id="onbEyebrow">Krok 1 ze 4</div>
+      <div class="onb-title" id="onbTitle">Vítejte v CloudForce</div>
+      <div class="onb-sub" id="onbSub">Provedeme vás pár kroky, ať máte hotový podpis za minutu.</div>
+      <div class="onb-dots">
+        <div class="onb-dot cur" data-step="1"></div>
+        <div class="onb-dot" data-step="2"></div>
+        <div class="onb-dot" data-step="3"></div>
+        <div class="onb-dot" data-step="4"></div>
+      </div>
+    </div>
+
+    <div class="onb-body">
+
+      <!-- STEP 1 — welcome + M365 prefill + name -->
+      <div class="onb-step cur" data-step="1">
+        <div class="onb-illu">👋</div>
+        <h3>Pojďme rovnou na to</h3>
+        <p>Nejjednodušší je načíst Vaše údaje rovnou z Microsoft 365 — jméno a e-mail budou doplněny automaticky.</p>
+        <button class="onb-magic" onclick="onbPrefill()">✨ Načíst z Microsoft 365</button>
+        <div class="onb-divider">nebo zadejte ručně</div>
+        <div class="onb-field">
+          <label>Jméno a příjmení</label>
+          <input type="text" id="onbName" placeholder="Jan Novák" oninput="onbSync('name','onbName')"/>
+        </div>
+        <div class="onb-field">
+          <label>Pracovní pozice</label>
+          <input type="text" id="onbTitle" placeholder="Senior Manager" oninput="onbSync('title','onbTitle')"/>
+        </div>
+      </div>
+
+      <!-- STEP 2 — photo + contact -->
+      <div class="onb-step" data-step="2">
+        <div class="onb-illu">📸</div>
+        <h3>Foto a kontakt</h3>
+        <p>Foto profilu se zobrazí ve vybraných vzhledech. Telefon a e-mail uvidí příjemce ve Vašem podpisu.</p>
+
+        <label class="onb-photo-row" id="onbPhotoRow">
+          <input type="file" id="onbPhotoFile" accept="image/*" style="display:none;" onchange="onbPhotoLoad(this)"/>
+          <div class="onb-photo-prev" id="onbPhotoPrev">👤</div>
+          <div class="onb-photo-meta">
+            <div class="t" id="onbPhotoTitle">Přetáhněte foto sem</div>
+            <div class="s" id="onbPhotoSub">nebo klikněte pro výběr · JPG, PNG</div>
+          </div>
+        </label>
+
+        <div class="onb-field" style="margin-top:12px;">
+          <label>Telefon</label>
+          <input type="text" id="onbPhone" placeholder="+420 …" oninput="onbSync('phone','onbPhone')"/>
+        </div>
+        <div class="onb-field">
+          <label>E-mail</label>
+          <input type="email" id="onbEmail" placeholder="vy@firma.cz" oninput="onbSync('email','onbEmail')"/>
+        </div>
+      </div>
+
+      <!-- STEP 3 — pick a skin -->
+      <div class="onb-step" data-step="3">
+        <div class="onb-illu">🎨</div>
+        <h3>Vyberte vzhled</h3>
+        <p>Klepněte na vzhled, který se vám líbí. Můžete ho kdykoliv změnit v záložce 🎨 Vzhled.</p>
+        <div class="onb-skins" id="onbSkins"><div class="loading">Načítám vzhledy…</div></div>
+      </div>
+
+      <!-- STEP 4 — finish + tips -->
+      <div class="onb-step" data-step="4">
+        <div class="onb-finish">
+          <div class="onb-checkmark">✓</div>
+          <h3>Hotovo!</h3>
+          <p>Váš podpis je připravený. Tady jsou tři tipy, jak ho používat:</p>
+
+          <div class="onb-tip-list">
+            <div class="onb-tip">
+              <span class="onb-tip-ico">1</span>
+              <div><strong>Vložení do e-mailu:</strong> v záložce 👁 Náhled klepněte na <strong>✉️ Vložit podpis</strong>.</div>
+            </div>
+            <div class="onb-tip">
+              <span class="onb-tip-ico">2</span>
+              <div><strong>Úprava údajů:</strong> v záložce 👤 Údaje. Změny se okamžitě promítnou.</div>
+            </div>
+            <div class="onb-tip">
+              <span class="onb-tip-ico">3</span>
+              <div><strong>Pomoc později:</strong> tento průvodce znovu otevřete kliknutím na <strong>?</strong> v rohu.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="onb-ft">
+      <button class="onb-back" id="onbBack" onclick="onbStep(-1)" disabled>← Zpět</button>
+      <div class="onb-spacer"></div>
+      <button class="onb-next" id="onbNext" onclick="onbStep(1)">Pokračovat →</button>
+    </div>
+  </div>
+</div>
+
+<button class="onb-trigger" id="onbTrigger" onclick="openOnboarding(false)" title="Nápověda">?</button>
 <div class="header">
   <div>
     <div class="header-logo">Cloud<span>Force</span></div>
@@ -88,10 +263,6 @@ input::placeholder{color:#bcc4d0;}
 </div>
 
 <div class="panel active" id="tab-form">
-  <div id="firstRunHint" style="display:none;background:#eef6ff;border:1px solid #b6d8ff;border-radius:8px;padding:9px 11px;margin-bottom:10px;font-size:11px;color:#1a3a66;position:relative;">
-    👋 <strong>Vítejte!</strong> Klikněte na „✨ Načíst moje údaje", vyberte v záložce 🎨 vzhled a hotovo. Pro automatické vkládání zapněte přepínač dole.
-    <span onclick="dismissHint()" style="position:absolute;top:6px;right:8px;cursor:pointer;color:#7a9;font-weight:700;">✕</span>
-  </div>
   <button class="btn btn-magic" onclick="prefillFromM365()">✨ Načíst moje údaje z Microsoft 365</button>
 
   <div class="section-label">Osobní údaje</div>
@@ -300,7 +471,155 @@ function removeSignature(btn){
   });
 }
 
-function dismissHint(){document.getElementById('firstRunHint').style.display='none';localStorage.setItem('cf_seen','1');}
+/* ───── ONBOARDING ───── */
+let onbCurrentStep = 1;
+const ONB_STEPS = [
+  null,
+  { eyebrow:'Krok 1 ze 4', title:'Vítejte v CloudForce', sub:'Provedeme vás pár kroky, ať máte hotový podpis za minutu.' },
+  { eyebrow:'Krok 2 ze 4', title:'Foto a kontakt',         sub:'Krok, který dělá podpis osobnějším a kontakt dostupnější.' },
+  { eyebrow:'Krok 3 ze 4', title:'Vyberte si vzhled',      sub:'Z padesáti šablon vyberte tu, která sedí vaší firmě.' },
+  { eyebrow:'Krok 4 ze 4', title:'A je to!',                sub:'Tady jsou rychlé tipy, jak plugin používat.' }
+];
+
+function openOnboarding(firstRun){
+  // If user already did it, just refresh data into onboard fields
+  document.getElementById('onbName').value  = document.getElementById('name').value || '';
+  document.getElementById('onbTitle').value = document.getElementById('title').value || '';
+  document.getElementById('onbPhone').value = document.getElementById('phone').value || '';
+  document.getElementById('onbEmail').value = document.getElementById('email').value || '';
+  // Show existing photo if set
+  const ph = document.getElementById('photoPreview').src;
+  if (ph && ph.startsWith('data:')) {
+    const prev = document.getElementById('onbPhotoPrev');
+    prev.style.background = `url(${ph}) center/cover`;
+    prev.textContent = '';
+    document.getElementById('onbPhotoTitle').textContent = 'Foto je nahrané';
+    document.getElementById('onbPhotoSub').textContent = 'klikněte pro změnu';
+  }
+  onbRenderSkins();
+  onbGotoStep(1);
+  document.getElementById('onbBg').classList.add('show');
+}
+
+function closeOnboarding(){
+  document.getElementById('onbBg').classList.remove('show');
+  localStorage.setItem('cf_seen','1');
+  document.getElementById('onbTrigger').classList.add('visible');
+}
+
+function onbStep(delta){
+  const next = onbCurrentStep + delta;
+  if (next < 1) return;
+  if (next > 4) {
+    closeOnboarding();
+    saveData(); // persist what's been filled
+    return;
+  }
+  onbGotoStep(next);
+}
+
+function onbGotoStep(n){
+  onbCurrentStep = n;
+  document.querySelectorAll('.onb-step').forEach(s => {
+    s.classList.toggle('cur', parseInt(s.dataset.step) === n);
+  });
+  document.querySelectorAll('.onb-dot').forEach(d => {
+    const s = parseInt(d.dataset.step);
+    d.classList.toggle('cur', s === n);
+    d.classList.toggle('done', s < n);
+  });
+  const meta = ONB_STEPS[n];
+  if (meta) {
+    document.getElementById('onbEyebrow').textContent = meta.eyebrow;
+    document.getElementById('onbTitle').textContent   = meta.title;
+    document.getElementById('onbSub').textContent     = meta.sub;
+  }
+  document.getElementById('onbBack').disabled = (n === 1);
+  const nextBtn = document.getElementById('onbNext');
+  if (n === 4) {
+    nextBtn.innerHTML = 'Dokončit ✓';
+    nextBtn.classList.add('done');
+  } else {
+    nextBtn.innerHTML = 'Pokračovat →';
+    nextBtn.classList.remove('done');
+  }
+}
+
+function onbSync(targetId, sourceId){
+  document.getElementById(targetId).value = document.getElementById(sourceId).value;
+  updatePreview();
+}
+
+function onbPrefill(){
+  prefillFromM365();
+  setTimeout(() => {
+    // mirror back into onboard fields
+    document.getElementById('onbName').value  = document.getElementById('name').value || '';
+    document.getElementById('onbEmail').value = document.getElementById('email').value || '';
+  }, 200);
+}
+
+function onbPhotoLoad(input){
+  if (!input.files || !input.files[0]) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const dataUrl = e.target.result;
+    // Set in main form
+    const photoPrev = document.getElementById('photoPreview');
+    photoPrev.src = dataUrl;
+    photoPrev.style.display = 'block';
+    // Set in onboard preview
+    const onbPrev = document.getElementById('onbPhotoPrev');
+    onbPrev.style.background = `url(${dataUrl}) center/cover`;
+    onbPrev.textContent = '';
+    document.getElementById('onbPhotoTitle').textContent = 'Foto nahráno ✓';
+    document.getElementById('onbPhotoSub').textContent = 'klikněte pro změnu';
+    updatePreview();
+  };
+  reader.readAsDataURL(input.files[0]);
+}
+
+function onbRenderSkins(){
+  const wrap = document.getElementById('onbSkins');
+  if (!skins || !skins.length) { wrap.innerHTML = '<div class="loading">Žádné vzhledy ke zobrazení.</div>'; return; }
+  wrap.innerHTML = '';
+  skins.forEach(skin => {
+    const card = document.createElement('div');
+    card.className = 'onb-skin-card' + (skin.id === selectedSkinId ? ' selected' : '');
+    card.onclick = () => {
+      selectedSkinId = skin.id;
+      onbRenderSkins();
+      renderSkinGrid();
+      updatePreview();
+    };
+    const sw = document.createElement('div');
+    sw.className = 'onb-skin-swatch';
+    sw.style.background = skin.styles?.primaryColor || '#444';
+    const accent = document.createElement('div');
+    accent.style.cssText = `position:absolute;right:0;top:0;bottom:0;width:38%;background:${skin.styles?.accentColor || '#aaa'};`;
+    sw.appendChild(accent);
+    const meta = document.createElement('div');
+    meta.className = 'onb-skin-meta';
+    const n = document.createElement('div'); n.className = 'n'; n.textContent = skin.name;
+    const c = document.createElement('div'); c.className = 'c'; c.textContent = skin.category || skin.layout;
+    meta.appendChild(n); meta.appendChild(c);
+    const check = document.createElement('div'); check.className = 'onb-skin-check'; check.textContent = '✓';
+    card.appendChild(sw); card.appendChild(meta); card.appendChild(check);
+    wrap.appendChild(card);
+  });
+}
+
+// Drag&drop for the photo step
+document.addEventListener('DOMContentLoaded', () => {
+  const row = document.getElementById('onbPhotoRow');
+  if (!row) return;
+  ['dragover','dragenter'].forEach(ev => row.addEventListener(ev, e => { e.preventDefault(); row.classList.add('drag'); }));
+  ['dragleave','drop'].forEach(ev => row.addEventListener(ev, e => { e.preventDefault(); row.classList.remove('drag'); }));
+  row.addEventListener('drop', e => {
+    const file = e.dataTransfer.files[0];
+    if (file) { const input = document.getElementById('onbPhotoFile'); const dt = new DataTransfer(); dt.items.add(file); input.files = dt.files; onbPhotoLoad(input); }
+  });
+});
 
 function changeLang(){userLang=document.getElementById('langSel').value;localStorage.setItem('cf_lang',userLang);updatePreview();}
 
@@ -333,7 +652,12 @@ function loadSavedData(){
   userLang=localStorage.getItem('cf_lang')||'cs';
   document.getElementById('langSel').value=userLang;
   try{ if(Office.context.roamingSettings.get('cf_autoInsert')) document.getElementById('autoInsert').checked=true; }catch(e){}
-  if(!localStorage.getItem('cf_seen')) document.getElementById('firstRunHint').style.display='block';
+  if (!localStorage.getItem('cf_seen')) {
+    // First-time user: open onboarding wizard after skins load
+    setTimeout(() => openOnboarding(true), 400);
+  } else {
+    document.getElementById('onbTrigger').classList.add('visible');
+  }
 }
 
 function switchTab(name){
